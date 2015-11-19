@@ -67,13 +67,53 @@
                     <view key="view" contentMode="scaleToFill" id="tk2-lJ-slu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKk-bU-DCJ">
+                                <rect key="frame" x="180.5" y="106" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7pV-pK-AbH"/>
+                                    <constraint firstAttribute="width" constant="240" id="X10-al-iwl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P74-3J-IIG">
+                                <rect key="frame" x="180" y="156" width="240.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Myy-1c-FTe"/>
+                                    <constraint firstAttribute="height" constant="30" id="hED-94-kuf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNK-Ij-uQx">
+                                <rect key="frame" x="247" y="219" width="107" height="30"/>
+                                <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="didCreateAccount:" destination="IId-hl-lSH" eventType="touchUpInside" id="iiF-vz-Hf4"/>
+                                    <segue destination="obE-8Z-Ppf" kind="presentation" identifier="createAccountSegue" animates="NO" id="arC-HT-xlV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jKk-bU-DCJ" firstAttribute="centerX" secondItem="tk2-lJ-slu" secondAttribute="centerX" id="LvE-gR-GJq"/>
+                            <constraint firstItem="aNK-Ij-uQx" firstAttribute="centerX" secondItem="tk2-lJ-slu" secondAttribute="centerX" id="VQK-Aa-2bB"/>
+                            <constraint firstItem="P74-3J-IIG" firstAttribute="top" secondItem="jKk-bU-DCJ" secondAttribute="bottom" constant="20" id="dd0-Ge-boa"/>
+                            <constraint firstItem="jKk-bU-DCJ" firstAttribute="top" secondItem="l6n-oI-IKt" secondAttribute="bottom" constant="86" id="k7h-eY-6ea"/>
+                            <constraint firstItem="P74-3J-IIG" firstAttribute="centerX" secondItem="tk2-lJ-slu" secondAttribute="centerX" id="nnv-G0-dk1"/>
+                            <constraint firstItem="aNK-Ij-uQx" firstAttribute="top" secondItem="P74-3J-IIG" secondAttribute="bottom" constant="33" id="uUu-aT-4md"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="P74-3J-IIG" id="Gw0-s2-1Xo"/>
+                        <outlet property="userNameField" destination="jKk-bU-DCJ" id="CRh-Ba-JCB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sX8-2L-tfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-29"/>
+            <point key="canvasLocation" x="769" y="-65"/>
         </scene>
         <!--Login-->
         <scene sceneID="2Xc-oB-OdG">
@@ -160,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13P-Wc-pkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3056" y="339"/>
+            <point key="canvasLocation" x="3064" y="339"/>
         </scene>
         <!--Search-->
         <scene sceneID="eVE-Ux-4Sc">
@@ -257,4 +297,7 @@
             <point key="canvasLocation" x="738" y="724"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="arC-HT-xlV"/>
+    </inferredMetricsTieBreakers>
 </document>

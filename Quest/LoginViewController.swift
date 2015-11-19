@@ -25,12 +25,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didPressLogIn(sender: AnyObject) {
-        let user = PFUser()
-        user.username = userNameField.text
-        user.password = passwordField.text
-        user.signUpInBackgroundWithBlock { (status: Bool, error: NSError?) -> Void in
-            self.performSegueWithIdentifier("logInSegue", sender: self)
+        PFUser.logInWithUsernameInBackground(userNameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
+            if error == nil {
+                self.performSegueWithIdentifier("logInSegue", sender: self)
+            } else {
+                print("error\(error)")
+            }
         }
+        
     }
 
     /*

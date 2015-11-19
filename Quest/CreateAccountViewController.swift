@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class CreateAccountViewController: UIViewController {
-
+    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,16 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didCreateAccount(sender: AnyObject) {
+        let user = PFUser()
+        user.username = userNameField.text
+        user.password = passwordField.text
+        user.signUpInBackgroundWithBlock { (status: Bool, error: NSError?) -> Void in
+            self.performSegueWithIdentifier("createAccountSegue", sender: self)
+        }
+    }
+
+
 
     /*
     // MARK: - Navigation
@@ -31,5 +43,4 @@ class CreateAccountViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
