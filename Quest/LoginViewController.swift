@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +24,16 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPressLogIn(sender: AnyObject) {
+        PFUser.logInWithUsernameInBackground(userNameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
+            if error == nil {
+                self.performSegueWithIdentifier("logInSegue", sender: self)
+            } else {
+                print("error\(error)")
+            }
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
