@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class ComposerViewController: UIViewController {
 
+    @IBOutlet weak var titlePlanField: UITextField!
+    @IBOutlet weak var tagsPlanField: UITextField!
+    @IBOutlet weak var bodyPlanField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +27,18 @@ class ComposerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPressCreate(sender: AnyObject) {
+        let plan = PFObject(className: "Plan")
+        
+        plan["title"] = titlePlanField.text
+        plan["tags"] = tagsPlanField.text
+        plan["body"] = bodyPlanField.text
+        
+        plan.saveInBackgroundWithBlock { (status: Bool, error: NSError?) -> Void in
+            print("create success")
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
+    
 }
