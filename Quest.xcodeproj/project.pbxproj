@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008D1BFE6EAD00A460DE /* AppDelegate.swift */; };
+		224200901BFE6EAD00A460DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008F1BFE6EAD00A460DE /* ViewController.swift */; };
+		224200931BFE6EAD00A460DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224200911BFE6EAD00A460DE /* Main.storyboard */; };
+		224200951BFE6EAD00A460DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224200941BFE6EAD00A460DE /* Assets.xcassets */; };
+		224200981BFE6EAD00A460DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224200961BFE6EAD00A460DE /* LaunchScreen.storyboard */; };
+		224200A31BFE6EAD00A460DE /* QuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200A21BFE6EAD00A460DE /* QuestTests.swift */; };
+		224200AE1BFE6EAD00A460DE /* QuestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200AD1BFE6EAD00A460DE /* QuestUITests.swift */; };
+		224200BC1BFE6F7700A460DE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200BB1BFE6F7700A460DE /* WelcomeViewController.swift */; };
+		224200BE1BFE6F8C00A460DE /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200BD1BFE6F8C00A460DE /* CreateAccountViewController.swift */; };
+		224200C01BFE6F9800A460DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200BF1BFE6F9800A460DE /* LoginViewController.swift */; };
+		224200C21BFE6FA700A460DE /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C11BFE6FA700A460DE /* ResetPasswordViewController.swift */; };
+		224200C41BFE6FB800A460DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C31BFE6FB800A460DE /* HomeViewController.swift */; };
+		224200C61BFE6FC700A460DE /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C51BFE6FC700A460DE /* ComposerViewController.swift */; };
+		224200C81BFE6FD200A460DE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C71BFE6FD200A460DE /* SearchViewController.swift */; };
+		224200CA1BFE702900A460DE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C91BFE702900A460DE /* CameraViewController.swift */; };
+		F33627611DA3FDF86502E4F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84896CECAF2C96ECDDD635 /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2242009F1BFE6EAD00A460DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224200821BFE6EAD00A460DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 224200891BFE6EAD00A460DE;
+			remoteInfo = Quest;
+		};
+		224200AA1BFE6EAD00A460DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224200821BFE6EAD00A460DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 224200891BFE6EAD00A460DE;
+			remoteInfo = Quest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2242008A1BFE6EAD00A460DE /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2242008D1BFE6EAD00A460DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2242008F1BFE6EAD00A460DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		224200921BFE6EAD00A460DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		224200941BFE6EAD00A460DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		224200971BFE6EAD00A460DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		224200991BFE6EAD00A460DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2242009E1BFE6EAD00A460DE /* QuestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		224200A21BFE6EAD00A460DE /* QuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTests.swift; sourceTree = "<group>"; };
+		224200A41BFE6EAD00A460DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		224200A91BFE6EAD00A460DE /* QuestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		224200AD1BFE6EAD00A460DE /* QuestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestUITests.swift; sourceTree = "<group>"; };
+		224200AF1BFE6EAD00A460DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		224200BB1BFE6F7700A460DE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		224200BD1BFE6F8C00A460DE /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		224200BF1BFE6F9800A460DE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		224200C11BFE6FA700A460DE /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		224200C31BFE6FB800A460DE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		224200C51BFE6FC700A460DE /* ComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerViewController.swift; sourceTree = "<group>"; };
+		224200C71BFE6FD200A460DE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		224200C91BFE702900A460DE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		CC84896CECAF2C96ECDDD635 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2937EC5F963CCED06038E11 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FBE9CF28E343CBACDE3E786D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		224200871BFE6EAD00A460DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33627611DA3FDF86502E4F4 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2242009B1BFE6EAD00A460DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		224200A61BFE6EAD00A460DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		224200811BFE6EAD00A460DE = {
+			isa = PBXGroup;
+			children = (
+				2242008C1BFE6EAD00A460DE /* Quest */,
+				224200A11BFE6EAD00A460DE /* QuestTests */,
+				224200AC1BFE6EAD00A460DE /* QuestUITests */,
+				2242008B1BFE6EAD00A460DE /* Products */,
+				3E885BBCA66F7543E90465FF /* Pods */,
+				853F8F98A4386390AF7A5334 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2242008B1BFE6EAD00A460DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2242008A1BFE6EAD00A460DE /* Quest.app */,
+				2242009E1BFE6EAD00A460DE /* QuestTests.xctest */,
+				224200A91BFE6EAD00A460DE /* QuestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2242008C1BFE6EAD00A460DE /* Quest */ = {
+			isa = PBXGroup;
+			children = (
+				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
+				2242008F1BFE6EAD00A460DE /* ViewController.swift */,
+				224200911BFE6EAD00A460DE /* Main.storyboard */,
+				224200C91BFE702900A460DE /* CameraViewController.swift */,
+				224200C71BFE6FD200A460DE /* SearchViewController.swift */,
+				224200C51BFE6FC700A460DE /* ComposerViewController.swift */,
+				224200C31BFE6FB800A460DE /* HomeViewController.swift */,
+				224200C11BFE6FA700A460DE /* ResetPasswordViewController.swift */,
+				224200BF1BFE6F9800A460DE /* LoginViewController.swift */,
+				224200BD1BFE6F8C00A460DE /* CreateAccountViewController.swift */,
+				224200BB1BFE6F7700A460DE /* WelcomeViewController.swift */,
+				224200941BFE6EAD00A460DE /* Assets.xcassets */,
+				224200961BFE6EAD00A460DE /* LaunchScreen.storyboard */,
+				224200991BFE6EAD00A460DE /* Info.plist */,
+			);
+			path = Quest;
+			sourceTree = "<group>";
+		};
+		224200A11BFE6EAD00A460DE /* QuestTests */ = {
+			isa = PBXGroup;
+			children = (
+				224200A21BFE6EAD00A460DE /* QuestTests.swift */,
+				224200A41BFE6EAD00A460DE /* Info.plist */,
+			);
+			path = QuestTests;
+			sourceTree = "<group>";
+		};
+		224200AC1BFE6EAD00A460DE /* QuestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				224200AD1BFE6EAD00A460DE /* QuestUITests.swift */,
+				224200AF1BFE6EAD00A460DE /* Info.plist */,
+			);
+			path = QuestUITests;
+			sourceTree = "<group>";
+		};
+		3E885BBCA66F7543E90465FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2937EC5F963CCED06038E11 /* Pods.debug.xcconfig */,
+				FBE9CF28E343CBACDE3E786D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		853F8F98A4386390AF7A5334 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC84896CECAF2C96ECDDD635 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		224200891BFE6EAD00A460DE /* Quest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224200B21BFE6EAD00A460DE /* Build configuration list for PBXNativeTarget "Quest" */;
+			buildPhases = (
+				85B40560331CDD76739377E2 /* Check Pods Manifest.lock */,
+				224200861BFE6EAD00A460DE /* Sources */,
+				224200871BFE6EAD00A460DE /* Frameworks */,
+				224200881BFE6EAD00A460DE /* Resources */,
+				EAB0CF914C6CC99B09C6FE09 /* Embed Pods Frameworks */,
+				1BA8C39B8C4D3AFF40989179 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quest;
+			productName = Quest;
+			productReference = 2242008A1BFE6EAD00A460DE /* Quest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2242009D1BFE6EAD00A460DE /* QuestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224200B51BFE6EAD00A460DE /* Build configuration list for PBXNativeTarget "QuestTests" */;
+			buildPhases = (
+				2242009A1BFE6EAD00A460DE /* Sources */,
+				2242009B1BFE6EAD00A460DE /* Frameworks */,
+				2242009C1BFE6EAD00A460DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				224200A01BFE6EAD00A460DE /* PBXTargetDependency */,
+			);
+			name = QuestTests;
+			productName = QuestTests;
+			productReference = 2242009E1BFE6EAD00A460DE /* QuestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		224200A81BFE6EAD00A460DE /* QuestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224200B81BFE6EAD00A460DE /* Build configuration list for PBXNativeTarget "QuestUITests" */;
+			buildPhases = (
+				224200A51BFE6EAD00A460DE /* Sources */,
+				224200A61BFE6EAD00A460DE /* Frameworks */,
+				224200A71BFE6EAD00A460DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				224200AB1BFE6EAD00A460DE /* PBXTargetDependency */,
+			);
+			name = QuestUITests;
+			productName = QuestUITests;
+			productReference = 224200A91BFE6EAD00A460DE /* QuestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		224200821BFE6EAD00A460DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Alex Nako";
+				TargetAttributes = {
+					224200891BFE6EAD00A460DE = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 7WHKLJ2EZ2;
+					};
+					2242009D1BFE6EAD00A460DE = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 7WHKLJ2EZ2;
+						TestTargetID = 224200891BFE6EAD00A460DE;
+					};
+					224200A81BFE6EAD00A460DE = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 7WHKLJ2EZ2;
+						TestTargetID = 224200891BFE6EAD00A460DE;
+					};
+				};
+			};
+			buildConfigurationList = 224200851BFE6EAD00A460DE /* Build configuration list for PBXProject "Quest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 224200811BFE6EAD00A460DE;
+			productRefGroup = 2242008B1BFE6EAD00A460DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				224200891BFE6EAD00A460DE /* Quest */,
+				2242009D1BFE6EAD00A460DE /* QuestTests */,
+				224200A81BFE6EAD00A460DE /* QuestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		224200881BFE6EAD00A460DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224200981BFE6EAD00A460DE /* LaunchScreen.storyboard in Resources */,
+				224200951BFE6EAD00A460DE /* Assets.xcassets in Resources */,
+				224200931BFE6EAD00A460DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2242009C1BFE6EAD00A460DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		224200A71BFE6EAD00A460DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BA8C39B8C4D3AFF40989179 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85B40560331CDD76739377E2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EAB0CF914C6CC99B09C6FE09 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		224200861BFE6EAD00A460DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224200BE1BFE6F8C00A460DE /* CreateAccountViewController.swift in Sources */,
+				224200CA1BFE702900A460DE /* CameraViewController.swift in Sources */,
+				224200BC1BFE6F7700A460DE /* WelcomeViewController.swift in Sources */,
+				224200901BFE6EAD00A460DE /* ViewController.swift in Sources */,
+				224200C81BFE6FD200A460DE /* SearchViewController.swift in Sources */,
+				224200C21BFE6FA700A460DE /* ResetPasswordViewController.swift in Sources */,
+				224200C01BFE6F9800A460DE /* LoginViewController.swift in Sources */,
+				224200C41BFE6FB800A460DE /* HomeViewController.swift in Sources */,
+				224200C61BFE6FC700A460DE /* ComposerViewController.swift in Sources */,
+				2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2242009A1BFE6EAD00A460DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224200A31BFE6EAD00A460DE /* QuestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		224200A51BFE6EAD00A460DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224200AE1BFE6EAD00A460DE /* QuestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		224200A01BFE6EAD00A460DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 224200891BFE6EAD00A460DE /* Quest */;
+			targetProxy = 2242009F1BFE6EAD00A460DE /* PBXContainerItemProxy */;
+		};
+		224200AB1BFE6EAD00A460DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 224200891BFE6EAD00A460DE /* Quest */;
+			targetProxy = 224200AA1BFE6EAD00A460DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		224200911BFE6EAD00A460DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				224200921BFE6EAD00A460DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		224200961BFE6EAD00A460DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				224200971BFE6EAD00A460DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		224200B01BFE6EAD00A460DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		224200B11BFE6EAD00A460DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		224200B31BFE6EAD00A460DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2937EC5F963CCED06038E11 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Quest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nako.Quest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		224200B41BFE6EAD00A460DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBE9CF28E343CBACDE3E786D /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Quest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nako.Quest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		224200B61BFE6EAD00A460DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QuestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nako.QuestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quest.app/Quest";
+			};
+			name = Debug;
+		};
+		224200B71BFE6EAD00A460DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QuestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nako.QuestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quest.app/Quest";
+			};
+			name = Release;
+		};
+		224200B91BFE6EAD00A460DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QuestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nako.QuestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Quest;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		224200BA1BFE6EAD00A460DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QuestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nako.QuestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Quest;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		224200851BFE6EAD00A460DE /* Build configuration list for PBXProject "Quest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224200B01BFE6EAD00A460DE /* Debug */,
+				224200B11BFE6EAD00A460DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		224200B21BFE6EAD00A460DE /* Build configuration list for PBXNativeTarget "Quest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224200B31BFE6EAD00A460DE /* Debug */,
+				224200B41BFE6EAD00A460DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		224200B51BFE6EAD00A460DE /* Build configuration list for PBXNativeTarget "QuestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224200B61BFE6EAD00A460DE /* Debug */,
+				224200B71BFE6EAD00A460DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		224200B81BFE6EAD00A460DE /* Build configuration list for PBXNativeTarget "QuestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224200B91BFE6EAD00A460DE /* Debug */,
+				224200BA1BFE6EAD00A460DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 224200821BFE6EAD00A460DE /* Project object */;
+}
