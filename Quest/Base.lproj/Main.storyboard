@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -16,8 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VP-HR-F83">
+                                <rect key="frame" x="246.5" y="538" width="107" height="30"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" red="0.17180199870000001" green="0.19934763180000001" blue="0.26978772099999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IId-hl-lSH" kind="presentation" identifier="createAccountSegue" id="8uj-aD-g2X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8h-MS-GSs">
+                                <rect key="frame" x="230" y="484" width="141" height="30"/>
+                                <state key="normal" title="LogIn with Facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECf-FV-zIv">
+                                <rect key="frame" x="281" y="430" width="38" height="30"/>
+                                <state key="normal" title="LogIn">
+                                    <color key="titleColor" red="0.17180199870000001" green="0.19934763180000001" blue="0.26978772099999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="17Y-V6-HLn" kind="presentation" identifier="logInSegue" id="Xet-hz-o48"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R8h-MS-GSs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="300-Q8-s0c"/>
+                            <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="R8h-MS-GSs" secondAttribute="bottom" constant="24" id="SLk-hX-D7c"/>
+                            <constraint firstItem="R8h-MS-GSs" firstAttribute="top" secondItem="ECf-FV-zIv" secondAttribute="bottom" constant="24" id="WH5-XM-37P"/>
+                            <constraint firstItem="8VP-HR-F83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fgN-DG-5fb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8VP-HR-F83" secondAttribute="bottom" constant="32" id="yJL-qr-o7f"/>
+                            <constraint firstItem="ECf-FV-zIv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyy-jH-9nb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -54,13 +86,21 @@
                     <view key="view" contentMode="scaleToFill" id="ilE-0f-VdS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBp-I5-x0z">
+                                <rect key="frame" x="252" y="151" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MaE-uL-5dV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSL-Di-n2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="724"/>
+            <point key="canvasLocation" x="1550" y="724"/>
         </scene>
         <!--Home-->
         <scene sceneID="eV8-12-Tdf">
@@ -79,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13P-Wc-pkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="339"/>
+            <point key="canvasLocation" x="3034" y="339"/>
         </scene>
         <!--Search-->
         <scene sceneID="eVE-Ux-4Sc">
@@ -98,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu0-OK-NUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3595" y="339"/>
+            <point key="canvasLocation" x="4407" y="339"/>
         </scene>
         <!--Camera-->
         <scene sceneID="S6c-OH-5Yp">
@@ -136,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddM-q7-z1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2926" y="339"/>
+            <point key="canvasLocation" x="3738" y="339"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="yeP-jy-Pvg">
@@ -155,7 +195,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di1-BG-h3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="724"/>
+            <point key="canvasLocation" x="2266" y="724"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o3v-cW-BBZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="17Y-V6-HLn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hxS-tF-X3G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SRd-AU-XOL" kind="relationship" relationship="rootViewController" id="sxu-HL-saZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W42-dT-Pf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="724"/>
         </scene>
     </scenes>
 </document>
