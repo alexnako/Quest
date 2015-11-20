@@ -22,6 +22,7 @@
 		224200C61BFE6FC700A460DE /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C51BFE6FC700A460DE /* ComposerViewController.swift */; };
 		224200C81BFE6FD200A460DE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C71BFE6FD200A460DE /* SearchViewController.swift */; };
 		224200CA1BFE702900A460DE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C91BFE702900A460DE /* CameraViewController.swift */; };
+		46C61DB11BFE82E500A0CB50 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C61DB01BFE82E500A0CB50 /* HomeViewCell.swift */; };
 		F33627611DA3FDF86502E4F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84896CECAF2C96ECDDD635 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		224200C51BFE6FC700A460DE /* ComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerViewController.swift; sourceTree = "<group>"; };
 		224200C71BFE6FD200A460DE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		224200C91BFE702900A460DE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		46C61DB01BFE82E500A0CB50 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		CC84896CECAF2C96ECDDD635 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2937EC5F963CCED06038E11 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FBE9CF28E343CBACDE3E786D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
 				2242008F1BFE6EAD00A460DE /* ViewController.swift */,
 				224200911BFE6EAD00A460DE /* Main.storyboard */,
+				46C61DB01BFE82E500A0CB50 /* HomeViewCell.swift */,
 				224200C91BFE702900A460DE /* CameraViewController.swift */,
 				224200C71BFE6FD200A460DE /* SearchViewController.swift */,
 				224200C51BFE6FC700A460DE /* ComposerViewController.swift */,
@@ -363,6 +366,7 @@
 				224200BC1BFE6F7700A460DE /* WelcomeViewController.swift in Sources */,
 				224200901BFE6EAD00A460DE /* ViewController.swift in Sources */,
 				224200C81BFE6FD200A460DE /* SearchViewController.swift in Sources */,
+				46C61DB11BFE82E500A0CB50 /* HomeViewCell.swift in Sources */,
 				224200C21BFE6FA700A460DE /* ResetPasswordViewController.swift in Sources */,
 				224200C01BFE6F9800A460DE /* LoginViewController.swift in Sources */,
 				224200C41BFE6FB800A460DE /* HomeViewController.swift in Sources */,
