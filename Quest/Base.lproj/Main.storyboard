@@ -40,7 +40,7 @@
                                     <color key="titleColor" red="0.17180199870000001" green="0.19934763180000001" blue="0.26978772099999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="17Y-V6-HLn" kind="presentation" identifier="logInSegue" id="Xet-hz-o48"/>
+                                    <segue destination="SRd-AU-XOL" kind="presentation" id="eww-Z6-nYz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,6 +99,14 @@
                                 <connections>
                                     <action selector="didCreateAccount:" destination="IId-hl-lSH" eventType="touchUpInside" id="iiF-vz-Hf4"/>
                                     <segue destination="obE-8Z-Ppf" kind="presentation" identifier="createAccountSegue" animates="NO" id="arC-HT-xlV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc3-aT-AcA">
+                                <rect key="frame" x="284" y="285" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="didPressCancel:" destination="IId-hl-lSH" eventType="touchUpInside" id="9Ex-nn-FNX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -164,6 +172,14 @@
                                     <action selector="didPressLogIn:" destination="SRd-AU-XOL" eventType="touchUpInside" id="Lll-av-RL6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-WH-JS3">
+                                <rect key="frame" x="187" y="304" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="didPressCancel:" destination="SRd-AU-XOL" eventType="touchUpInside" id="gsP-nA-4Zw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,9 +220,52 @@
                     <view key="view" contentMode="scaleToFill" id="uIy-0c-Nzq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuR-dQ-NFX">
+                                <rect key="frame" x="143" y="153" width="79" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Create plan"/>
+                                <connections>
+                                    <segue destination="GD8-8d-cQL" kind="presentation" id="ZyB-HV-Bws"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total number of plans created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zn-kj-92P">
+                                <rect key="frame" x="52" y="77" width="229" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGj-ca-Mjv">
+                                <rect key="frame" x="52" y="106" width="62" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total number of plans created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-Zy-UyG">
+                                <rect key="frame" x="52" y="48" width="229" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4M-Gk-oNF">
+                                <rect key="frame" x="138" y="215" width="57" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Loggout"/>
+                                <connections>
+                                    <action selector="didPressLogout:" destination="obE-8Z-Ppf" eventType="touchUpInside" id="yx3-D6-VZU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="totalPlansLabel" destination="RGj-ca-Mjv" id="aGR-ZT-aMY"/>
+                        <outlet property="usernameLabel" destination="ed0-Zy-UyG" id="Tpv-jL-zxa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13P-Wc-pkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -288,20 +347,14 @@
                                     <action selector="didPressCreate:" destination="GD8-8d-cQL" eventType="touchUpInside" id="I5Y-cP-GZS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total number of plans created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQl-my-7ds">
-                                <rect key="frame" x="26" y="306" width="229" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrL-Uk-64R">
+                                <rect key="frame" x="186" y="220" width="48" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total number of plans created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-Ru-Up2">
-                                <rect key="frame" x="26" y="335" width="229" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="didPressCancel:" destination="GD8-8d-cQL" eventType="touchUpInside" id="Ood-rZ-WOX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -314,7 +367,6 @@
                         <outlet property="bodyPlanField" destination="b74-qE-Wul" id="mns-dv-sIy"/>
                         <outlet property="tagsPlanField" destination="bAv-It-UBB" id="qAG-Va-ii2"/>
                         <outlet property="titlePlanField" destination="WuS-tH-kWP" id="5Ah-nC-f1K"/>
-                        <outlet property="totalPlansLabel" destination="5L8-Ru-Up2" id="qaW-Fy-Yd2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddM-q7-z1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,25 +391,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di1-BG-h3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2266" y="724"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="o3v-cW-BBZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="17Y-V6-HLn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hxS-tF-X3G">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="SRd-AU-XOL" kind="relationship" relationship="rootViewController" id="sxu-HL-saZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W42-dT-Pf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="738" y="724"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

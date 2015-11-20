@@ -7,29 +7,67 @@
 //
 
 import UIKit
+import Parse
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var totalPlansLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+
+    let currentUser = PFUser.currentUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // LOADING USER NAME AND NUMBER OF PLANS
+        usernameLabel.text = currentUser?.username
+        fetchPans()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // REFRESHING LIST
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refresh", object: nil)
     }
     
 
-    /*
-    // MARK: - Navigation
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    
+
+    // FETCHING NUMBER OF PLANS FROM USER
+    func fetchPans() {
+        
+        let query = PFQuery(className:"Plan")
+        
+        query.whereKey("user", equalTo: (currentUser?.username)!)
+        print(String(PFUser.currentUser()?.username))
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) plans")
+                self.totalPlansLabel.text = String(objects!.count)
+            } else {
+                // Log details of the failure
+                print("Error: \(error!)")
+            }
+        }
+        
+        
+    }
+    
+    // LOGOUT
+    @IBAction func didPressLogout(sender: AnyObject) {
+        PFUser.logOut()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    // REFRESH LIST OF PLANS AFTER CREATING NEW ONE
+    func refreshList(notification: NSNotification){
+        fetchPans()
+    }
 
 }
