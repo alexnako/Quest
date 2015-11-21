@@ -28,7 +28,11 @@ class CreateAccountViewController: UIViewController {
         
         switch (error.code) {
         case 200:
-            returnString = "Missing User Name"
+            returnString = ""
+        case 201:
+            returnString = ""
+        case 125:
+            returnString = "Invalid email address"
         default:
             returnString = error.description
         }
@@ -41,7 +45,11 @@ class CreateAccountViewController: UIViewController {
         
         switch (error.code) {
         case 200:
-            returnString = "Oops! Please type in your user name"
+            returnString = "Oops! Please enter email adrress."
+        case 201:
+            returnString = "Oops! Please enter password."
+        case 125:
+            returnString = "Please enter a valid email address."
         default:
             returnString = error.description
         }
@@ -64,7 +72,7 @@ class CreateAccountViewController: UIViewController {
                 // Parse.com returns error
                 let alertController = UIAlertController(title: self.getErrorTitle(error!), message:
                     self.getErrorMessage(error!), preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
