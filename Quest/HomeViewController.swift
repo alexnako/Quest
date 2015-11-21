@@ -53,7 +53,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 //print("Successfully retrieved \(objects!.count) plans")
                 
                 self.plans = objects
-                self.totalPlansLabel.text = String(self.plans.count)
                 self.tableView.reloadData()
                 
             } else {
