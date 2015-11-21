@@ -31,8 +31,13 @@ class CreateAccountViewController: UIViewController {
             returnString = ""
         case 201:
             returnString = ""
+        case 202:
+            returnString = ""
+        case 203:
+            returnString = ""
         case 125:
             returnString = "Invalid email address"
+     
         default:
             returnString = error.description
         }
@@ -48,8 +53,14 @@ class CreateAccountViewController: UIViewController {
             returnString = "Oops! Please enter email adrress."
         case 201:
             returnString = "Oops! Please enter password."
+        case 202:
+            returnString = "The email you entered has already been used. Please LogIn instead."
+        case 203:
+            returnString = "The user name you entered has already been used. Please LogIn instead."
         case 125:
             returnString = "Please enter a valid email address."
+
+     
         default:
             returnString = error.description
         }
