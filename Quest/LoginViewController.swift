@@ -32,8 +32,8 @@ class LoginViewController: UIViewController {
             returnString = ""
         case 201:
             returnString = ""
-        case 125:
-            returnString = "Invalid email address"
+        case 101:
+            returnString = "Oops! Invalid LogIn"
         default:
             returnString = error.description
         }
@@ -49,8 +49,8 @@ class LoginViewController: UIViewController {
             returnString = "Oops! Please enter email adrress."
         case 201:
             returnString = "Oops! Please enter password."
-        case 125:
-            returnString = "Please enter a valid email address."
+        case 101:
+            returnString = "The email, user name or password entered do not match our records."
         default:
             returnString = error.description
         }
@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
     
     //LOGIN
     @IBAction func didPressLogIn(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(userNameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
+        PFUser.logInWithUsernameInBackground(userNameField.text!.lowercaseString, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
             if error == nil {
                 self.userNameField.text = ""
                 self.passwordField.text = ""

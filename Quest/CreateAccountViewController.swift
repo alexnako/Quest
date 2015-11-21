@@ -70,7 +70,7 @@ class CreateAccountViewController: UIViewController {
     // CREATE ACCOUNT
     @IBAction func didCreateAccount(sender: AnyObject) {
         let user = PFUser()
-        user.username = userNameField.text
+        user.username = userNameField.text?.lowercaseString
         user.password = passwordField.text
         user.email = userNameField.text
         user.signUpInBackgroundWithBlock {
