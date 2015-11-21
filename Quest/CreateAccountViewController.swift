@@ -15,14 +15,15 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
+    // CREATE ACCOUNT
     @IBAction func didCreateAccount(sender: AnyObject) {
         let user = PFUser()
         user.username = userNameField.text
@@ -33,14 +34,10 @@ class CreateAccountViewController: UIViewController {
     }
 
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // CANCELLING CREATE ACCOUNT
+    @IBAction func didPressCancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    */
+
+
 }
