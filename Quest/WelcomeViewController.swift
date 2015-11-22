@@ -24,6 +24,7 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate{
         {
             print("Logged in")
         }
+        
         var loginButton = FBSDKLoginButton()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginButton.center = self.view.center
