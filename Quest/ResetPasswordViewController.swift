@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class ResetPasswordViewController: UIViewController {
 
+    @IBOutlet weak var emailField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +24,13 @@ class ResetPasswordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPressReset(sender: AnyObject) {
+
+        PFUser.requestPasswordResetForEmailInBackground(emailField.text!.lowercaseString)
+    }
+    @IBAction func didPressBack(sender: AnyObject) {
+         self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
