@@ -28,12 +28,7 @@
                                     <segue destination="IId-hl-lSH" kind="presentation" identifier="createAccountSegue" id="8uj-aD-g2X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8h-MS-GSs">
-                                <rect key="frame" x="230" y="484" width="141" height="30"/>
-                                <animations/>
-                                <state key="normal" title="LogIn with Facebook"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECf-FV-zIv">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECf-FV-zIv">
                                 <rect key="frame" x="281" y="430" width="38" height="30"/>
                                 <animations/>
                                 <state key="normal" title="LogIn">
@@ -47,14 +42,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="R8h-MS-GSs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="300-Q8-s0c"/>
-                            <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="R8h-MS-GSs" secondAttribute="bottom" constant="24" id="SLk-hX-D7c"/>
-                            <constraint firstItem="R8h-MS-GSs" firstAttribute="top" secondItem="ECf-FV-zIv" secondAttribute="bottom" constant="24" id="WH5-XM-37P"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fgN-DG-5fb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8VP-HR-F83" secondAttribute="bottom" constant="32" id="yJL-qr-o7f"/>
                             <constraint firstItem="ECf-FV-zIv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyy-jH-9nb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="obE-8Z-Ppf" kind="presentation" identifier="facebookLoginSegue" animates="NO" id="An1-wP-O1H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSL-Di-n2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="724"/>
+            <point key="canvasLocation" x="769" y="744"/>
         </scene>
         <!--Home-->
         <scene sceneID="eV8-12-Tdf">
@@ -298,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13P-Wc-pkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3088" y="339"/>
+            <point key="canvasLocation" x="2992" y="339"/>
         </scene>
         <!--Search-->
         <scene sceneID="eVE-Ux-4Sc">
@@ -469,10 +464,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di1-BG-h3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266" y="724"/>
+            <point key="canvasLocation" x="769" y="1489"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bK4-vR-9mX"/>
+        <segue reference="An1-wP-O1H"/>
     </inferredMetricsTieBreakers>
 </document>
