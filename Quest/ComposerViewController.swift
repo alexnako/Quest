@@ -9,24 +9,50 @@
 import UIKit
 import Parse
 
-class ComposerViewController: UIViewController {
+class ComposerViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var titlePlanField: UITextField!
     @IBOutlet weak var tagsPlanField: UITextField!
-    @IBOutlet weak var bodyPlanField: UITextField!
+    @IBOutlet weak var freetextPlanField: UITextView!
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var bodyPlanField: UITextView!
+    @IBOutlet weak var bodyPlaceholderLabel: UILabel!
     
+    
+    @IBOutlet weak var bodyPlanHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createButton.layer.cornerRadius = 4;
+        createButton.layer.borderWidth = 1;
+        createButton.layer.borderColor = UIColor.blackColor().CGColor        
+        
+        bodyPlanField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
     }
     
     
-    
+    // CHANGE SIZE OF PLAN ACCORDING TO TEXT SIZE
+    func textViewDidChange(bodyPlanField: UITextView) {
+        bodyPlanField.sizeToFit()
+        bodyPlanField.layoutIfNeeded()
+        let height = bodyPlanField.sizeThatFits(CGSizeMake(bodyPlanField.frame.size.width, CGFloat.max)).height
+        if height > 60 {
+            bodyPlanHeight.constant = height
+        }
+        if self.bodyPlanField.text != nil {
+            bodyPlaceholderLabel.hidden = true
+        } else {
+            bodyPlaceholderLabel.hidden = false
+        }
+    }
+        
+
     
     @IBAction func didPressCreate(sender: AnyObject) {
         
