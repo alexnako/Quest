@@ -51,9 +51,18 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
             bodyPlaceholderLabel.hidden = false
         }
     }
-        
-
     
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "segueSearch") {
+            var svc = segue!.destinationViewController as! SearchViewController;
+            
+            svc.toPass = tagsPlanField.text
+            
+        }
+    }
+    
+    
+    // CREATING PLAN
     @IBAction func didPressCreate(sender: AnyObject) {
         
         let plan = PFObject(className: "Plan")
