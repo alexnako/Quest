@@ -18,13 +18,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
 
-    
-    
-    var tableData: [String] = ["Sun", "Moon", "Saturn", "Mars", "Pluto","Sun", "Moon", "Saturn", "Mars", "Pluto"]
-    var tableImages: [String] = ["sun.jpg", "moon.jpg", "saturn.jpg", ",mars.jpg", "pluto.jpg","sun.jpg", "moon.jpg", "saturn.jpg", ",mars.jpg", "pluto.jpg"]
-    
     var toPass:String!
-    
     var photos: [NSDictionary]!
 
 
