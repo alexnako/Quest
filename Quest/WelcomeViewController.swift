@@ -51,8 +51,8 @@ class WelcomeViewController: UIViewController {
         PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) { (user:PFUser?, error:NSError?) -> Void in
             if error == nil
             {
-                print("Login complete")
                 self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
+                print("Login complete")
                 
             }
             else
