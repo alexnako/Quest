@@ -23,6 +23,8 @@
 		224200C81BFE6FD200A460DE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C71BFE6FD200A460DE /* SearchViewController.swift */; };
 		224200CA1BFE702900A460DE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224200C91BFE702900A460DE /* CameraViewController.swift */; };
 		22B382F11BFFF4B600AD7A4D /* PlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B382F01BFFF4B600AD7A4D /* PlanCell.swift */; };
+		22CF53371C0387AC00084207 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF53361C0387AC00084207 /* PhotoViewCell.swift */; };
+		22CF533B1C03920500084207 /* CollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF533A1C03920500084207 /* CollViewCell.swift */; };
 		F33627611DA3FDF86502E4F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC84896CECAF2C96ECDDD635 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		224200C71BFE6FD200A460DE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		224200C91BFE702900A460DE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		22B382F01BFFF4B600AD7A4D /* PlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCell.swift; sourceTree = "<group>"; };
+		22CF53361C0387AC00084207 /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewCell.swift; path = ../PhotoViewCell.swift; sourceTree = "<group>"; };
+		22CF533A1C03920500084207 /* CollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollViewCell.swift; sourceTree = "<group>"; };
 		CC84896CECAF2C96ECDDD635 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2937EC5F963CCED06038E11 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FBE9CF28E343CBACDE3E786D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		2242008C1BFE6EAD00A460DE /* Quest */ = {
 			isa = PBXGroup;
 			children = (
+				22CF53361C0387AC00084207 /* PhotoViewCell.swift */,
 				22B382F01BFFF4B600AD7A4D /* PlanCell.swift */,
 				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
 				2242008F1BFE6EAD00A460DE /* ViewController.swift */,
@@ -137,6 +142,7 @@
 				224200941BFE6EAD00A460DE /* Assets.xcassets */,
 				224200961BFE6EAD00A460DE /* LaunchScreen.storyboard */,
 				224200991BFE6EAD00A460DE /* Info.plist */,
+				22CF533A1C03920500084207 /* CollViewCell.swift */,
 			);
 			path = Quest;
 			sourceTree = "<group>";
@@ -369,9 +375,11 @@
 				22B382F11BFFF4B600AD7A4D /* PlanCell.swift in Sources */,
 				224200C21BFE6FA700A460DE /* ResetPasswordViewController.swift in Sources */,
 				224200C01BFE6F9800A460DE /* LoginViewController.swift in Sources */,
+				22CF533B1C03920500084207 /* CollViewCell.swift in Sources */,
 				224200C41BFE6FB800A460DE /* HomeViewController.swift in Sources */,
 				224200C61BFE6FC700A460DE /* ComposerViewController.swift in Sources */,
 				2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */,
+				22CF53371C0387AC00084207 /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
