@@ -14,15 +14,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var totalPlansLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var newPlanButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     let currentUser = PFUser.currentUser()
     var plans: [PFObject]!
+    var planToEdit: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         plans = []
+        
+        
+        newPlanButton.layer.cornerRadius = 4;
+        newPlanButton.layer.borderWidth = 1;
+        newPlanButton.layer.borderColor = UIColor.blackColor().CGColor
+        logoutButton.layer.cornerRadius = 4;
+        logoutButton.layer.borderWidth = 1;
+        logoutButton.layer.borderColor = UIColor.blackColor().CGColor
+
         
         
         // LOADING USER NAME AND NUMBER OF PLANS
@@ -65,6 +77,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    //TABLE VIEW WITH PLANS
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plans.count
     }
@@ -78,6 +91,44 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
+    
+    
+    
+    //CLICKING ON A PLAN
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+            print(indexPath.row)
+//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PlanCell
+//        planToEdit = cell.planTitleLabel.text
+//        
+//        performSegueWithIdentifier("readerSegue", sender: self)
+
+        // TODO: TRY CREATING SEGUE IN CODE
+//        let indexPath = tableView.indexPathForSelectedRow();
+//        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
+//        let storyboard = UIStoryboard(name: "YourStoryBoardFileName", bundle: nil)
+//        var viewController = storyboard.instantiateViewControllerWithIdentifier("viewControllerIdentifer") as AnotherViewController
+//        viewController.passedValue = currentCell.textLabel.text
+//        self.presentViewController(viewContoller, animated: true , completion: nil)
+        
+        
+    }
+    
+    // PASSING VARIABLE TO PLAN READER – WON'T NEED THIS IF READER IS CALLED FROM DIDSELECT
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "readerSegue") {
+            
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destinationViewController as! ReaderViewController
+            // your new view controller should have property that will store passed value
+            viewController.passedValue = planToEdit
+        }
+        
+    }
+    
+    
+    
     
     
     

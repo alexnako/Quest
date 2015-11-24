@@ -101,8 +101,33 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
     }
     
     // CANCELLING PLAN CREATION
+    
+    
     @IBAction func didPressCancel(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if titlePlanField.text != "" || bodyPlanField.text != "" || tagsPlanField.text != "" {
+        
+            let alertController = UIAlertController(title: "Discard Plan", message: "Are you sure you want to discard this plan?", preferredStyle: .Alert)
+            
+            // Cancel action
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                // handle cancel response here. Doing nothing will dismiss the view.
+            }
+            alertController.addAction(cancelAction)
+            
+            // OK action
+            let OKAction = UIAlertAction(title: "Discard", style: .Default) { (action) in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            alertController.addAction(OKAction)
+            
+            presentViewController(alertController, animated: true) { }
+            
+        } else {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+
+        
     }
     
 }

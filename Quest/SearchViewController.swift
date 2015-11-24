@@ -20,12 +20,14 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     var toPass:String!
     var photos: [NSDictionary]!
+    var photosSelected: [String]!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchField.text = toPass
         photos = []
+        photosSelected = []
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
@@ -50,17 +52,18 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     func searchImages () {
         
         // REQUESTING INSTAGRAM
-        let url = NSURL(string: "https://api.instagram.com/v1/tags/\(searchField.text!)/media/recent?access_token=3044669.1677ed0.c6d74cb75c3b444fadfd4ca68a6e8975")!
-        let request = NSURLRequest(URL: url)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            if searchField.text != nil {
             
-            //CREATING DICTIONARY FROM JASON
-            let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-            self.photos = dictionary["data"] as! [NSDictionary]
-            print(self.photos)
-            self.collectionView.reloadData()
+            let url = NSURL(string: "https://api.instagram.com/v1/tags/\(searchField.text!)/media/recent?access_token=3044669.1677ed0.c6d74cb75c3b444fadfd4ca68a6e8975")!
+            let request = NSURLRequest(URL: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                //CREATING DICTIONARY FROM JASON
+                let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+                self.photos = dictionary["data"] as! [NSDictionary]
+                self.collectionView.reloadData()
+            }
         }
-        
     }
     
     @IBAction func didPressSearch(sender: AnyObject) {
@@ -85,8 +88,17 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     //IDENTIFY CELL CLICKED
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("Cell \(indexPath.row)")
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollViewCell
+        
+        if cell.checkButton.selected == true {
+            cell.checkButton.selected = false
+        } else {
+            cell.checkButton.selected = true
+        }
+        
     }
+
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,9 +107,9 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
 
 
-
     @IBAction func didPressBack(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221E0EB51C04BD9800EB379C /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E0EB41C04BD9800EB379C /* ReaderViewController.swift */; };
 		2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008D1BFE6EAD00A460DE /* AppDelegate.swift */; };
 		224200901BFE6EAD00A460DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008F1BFE6EAD00A460DE /* ViewController.swift */; };
 		224200931BFE6EAD00A460DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224200911BFE6EAD00A460DE /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221E0EB41C04BD9800EB379C /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		2242008A1BFE6EAD00A460DE /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2242008D1BFE6EAD00A460DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2242008F1BFE6EAD00A460DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
 				2242008F1BFE6EAD00A460DE /* ViewController.swift */,
 				224200911BFE6EAD00A460DE /* Main.storyboard */,
+				221E0EB41C04BD9800EB379C /* ReaderViewController.swift */,
 				224200C91BFE702900A460DE /* CameraViewController.swift */,
 				224200C71BFE6FD200A460DE /* SearchViewController.swift */,
 				224200C51BFE6FC700A460DE /* ComposerViewController.swift */,
@@ -376,6 +379,7 @@
 				224200C21BFE6FA700A460DE /* ResetPasswordViewController.swift in Sources */,
 				224200C01BFE6F9800A460DE /* LoginViewController.swift in Sources */,
 				22CF533B1C03920500084207 /* CollViewCell.swift in Sources */,
+				221E0EB51C04BD9800EB379C /* ReaderViewController.swift in Sources */,
 				224200C41BFE6FB800A460DE /* HomeViewController.swift in Sources */,
 				224200C61BFE6FC700A460DE /* ComposerViewController.swift in Sources */,
 				2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */,
