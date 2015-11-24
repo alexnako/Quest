@@ -8,7 +8,4 @@ pod 'Parse'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
-<<<<<<< HEAD
-=======
 pod 'ParseFacebookUtilsV4'
->>>>>>> master

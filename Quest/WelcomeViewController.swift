@@ -9,29 +9,14 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-<<<<<<< HEAD
-
-class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate{
-=======
 import Parse
 import ParseFacebookUtilsV4
 
 class WelcomeViewController: UIViewController {
->>>>>>> master
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< HEAD
-        if (FBSDKAccessToken.currentAccessToken() == nil)
-        {
-            print("Not logged in")
-            
-        }
-        else
-        {
-            print("Logged in")
-=======
         /* if (FBSDKAccessToken.currentAccessToken() == nil)
         {
         print("Not logged in")
@@ -40,7 +25,6 @@ class WelcomeViewController: UIViewController {
         else
         {
         print("Logged in")
->>>>>>> master
         }
         
         var loginButton = FBSDKLoginButton()
@@ -50,11 +34,7 @@ class WelcomeViewController: UIViewController {
         loginButton.delegate = self
         
         self.view.addSubview(loginButton)
-<<<<<<< HEAD
-        
-=======
         */
->>>>>>> master
         
         // Do any additional setup after loading the view.
     }
@@ -64,25 +44,6 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     //Facebook login
-<<<<<<< HEAD
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if error == nil
-        {
-        print("Login complete")
-            self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
-            
-        }
-        else
-        {
-        print(error.localizedDescription)
-        }
-        
-    }
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        
-        
-    }
-=======
     
     @IBAction func didPressFacebookLogin(sender: AnyObject) {
         let permissions = ["public_profile", "email"]
@@ -129,7 +90,6 @@ class WelcomeViewController: UIViewController {
     
     }
     */
->>>>>>> master
     
     /*
     // MARK: - Navigation

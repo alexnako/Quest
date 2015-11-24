@@ -11,10 +11,7 @@ import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
-<<<<<<< HEAD
-=======
 import ParseFacebookUtilsV4
->>>>>>> master
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,10 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         Parse.setApplicationId("gV7cj0DQSJrOF7zfIhjg30l2O4o2HgKUXtVdQzSl", clientKey: "fSrMFMgA606ujExlU4jRgM4HsN1JWFWs772Uhn3V")
-<<<<<<< HEAD
-=======
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
->>>>>>> master
     
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         // return true
