@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VP-HR-F83">
-                                <rect key="frame" x="247" y="538" width="107" height="30"/>
+                                <rect key="frame" x="107" y="506" width="107" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.17180199870000001" green="0.19934763180000001" blue="0.26978772099999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECf-FV-zIv">
-                                <rect key="frame" x="281" y="430" width="38" height="30"/>
+                                <rect key="frame" x="141" y="430" width="38" height="30"/>
                                 <animations/>
                                 <state key="normal" title="LogIn">
                                     <color key="titleColor" red="0.17180199870000001" green="0.19934763180000001" blue="0.26978772099999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,6 +47,7 @@
                             <constraint firstItem="ECf-FV-zIv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyy-jH-9nb"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="obE-8Z-Ppf" kind="presentation" identifier="facebookLoginSegue" animates="NO" id="An1-wP-O1H"/>
                     </connections>
@@ -64,11 +65,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4Gw-UQ-tjd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tk2-lJ-slu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKk-bU-DCJ">
-                                <rect key="frame" x="180" y="106" width="240" height="30"/>
+                                <rect key="frame" x="40" y="106" width="240" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7pV-pK-AbH"/>
@@ -88,7 +89,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNK-Ij-uQx">
-                                <rect key="frame" x="247" y="219" width="107" height="30"/>
+                                <rect key="frame" x="107" y="219" width="107" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
@@ -96,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc3-aT-AcA">
-                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <rect key="frame" x="16" y="20" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -136,11 +137,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wGP-E0-bzA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ilE-0f-VdS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBp-I5-x0z">
-                                <rect key="frame" x="180" y="138" width="240" height="30"/>
+                                <rect key="frame" x="40" y="138" width="240" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="4Mh-8v-36f"/>
@@ -152,7 +153,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbL-wD-3xa">
-                                <rect key="frame" x="180" y="192" width="240" height="30"/>
+                                <rect key="frame" x="40" y="192" width="240" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="XHf-3T-KTt"/>
@@ -162,7 +163,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-WH-JS3">
-                                <rect key="frame" x="20" y="28" width="48" height="30"/>
+                                <rect key="frame" x="16" y="28" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -170,7 +171,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7H-YG-5iY">
-                                <rect key="frame" x="231" y="237" width="139" height="28"/>
+                                <rect key="frame" x="91" y="237" width="139" height="28"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Forgot your password?"/>
@@ -179,7 +180,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fo4-D4-CQN">
-                                <rect key="frame" x="281" y="282" width="38" height="30"/>
+                                <rect key="frame" x="141" y="282" width="38" height="30"/>
                                 <animations/>
                                 <state key="normal" title="LogIn"/>
                                 <connections>
@@ -288,7 +289,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPx-2T-5MW" id="CIx-7D-MZI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plan title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mR-oY-XP9">
@@ -467,15 +468,16 @@
                         <viewControllerLayoutGuide type="bottom" id="JS0-Ch-iaW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NBN-XM-cbs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Us-Lk-bFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3595" y="-456"/>
+            <point key="canvasLocation" x="3738" y="-342"/>
         </scene>
         <!--Composer-->
         <scene sceneID="jt9-Uc-ofV">
@@ -719,11 +721,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Zh2-RE-FQf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="k7C-2X-2yC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k4N-sW-xdV">
-                                <rect key="frame" x="180" y="70" width="240" height="30"/>
+                                <rect key="frame" x="40" y="70" width="240" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="AFl-ag-pL7"/>
@@ -733,7 +735,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-oE-v07">
-                                <rect key="frame" x="281" y="147" width="39" height="30"/>
+                                <rect key="frame" x="141" y="147" width="39" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
@@ -749,7 +751,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDa-JK-7u7">
-                                <rect key="frame" x="239" y="32" width="122" height="21"/>
+                                <rect key="frame" x="99" y="32" width="121.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

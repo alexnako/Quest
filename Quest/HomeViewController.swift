@@ -97,10 +97,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //CLICKING ON A PLAN
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PlanCell
-        planToEdit = cell.planTitleLabel.text
-        
-        performSegueWithIdentifier("readerSegue", sender: self)
+            print(indexPath.row)
+//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PlanCell
+//        planToEdit = cell.planTitleLabel.text
+//        
+//        performSegueWithIdentifier("readerSegue", sender: self)
 
         // TODO: TRY CREATING SEGUE IN CODE
 //        let indexPath = tableView.indexPathForSelectedRow();
