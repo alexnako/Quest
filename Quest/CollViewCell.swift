@@ -11,4 +11,6 @@ import UIKit
 class CollViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imgCell: UIImageView!
+    @IBOutlet weak var checkButton: UIButton!
+
 }
