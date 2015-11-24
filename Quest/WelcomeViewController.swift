@@ -9,20 +9,22 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Parse
+import ParseFacebookUtilsV4
 
-class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate{
+class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (FBSDKAccessToken.currentAccessToken() == nil)
+        /* if (FBSDKAccessToken.currentAccessToken() == nil)
         {
-            print("Not logged in")
-            
+        print("Not logged in")
+        
         }
         else
         {
-            print("Logged in")
+        print("Logged in")
         }
         
         var loginButton = FBSDKLoginButton()
@@ -32,7 +34,7 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate{
         loginButton.delegate = self
         
         self.view.addSubview(loginButton)
-        
+        */
         
         // Do any additional setup after loading the view.
     }
@@ -42,23 +44,52 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate{
         // Dispose of any resources that can be recreated.
     }
     //Facebook login
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if error == nil
-        {
-        print("Login complete")
-            self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
-            
-        }
-        else
-        {
-        print(error.localizedDescription)
-        }
+    
+    @IBAction func didPressFacebookLogin(sender: AnyObject) {
+        let permissions = ["public_profile", "email"]
         
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) { (user:PFUser?, error:NSError?) -> Void in
+            if error == nil
+            {
+                print("Login complete")
+                self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
+                
+            }
+            else
+            {
+                print(error!.localizedDescription)
+            }
+            
+            /*
+            PFAnonymousUtils.logInWithBlock {
+            (user: PFUser?, error: NSError?) -> Void in
+            if error != nil || user == nil {
+            print("Anonymous login failed.")
+            } else {
+            print("Anonymous user logged in.")
+            }
+            }
+            */
+        }
+    }
+    /*func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+    if error == nil
+    {
+    print("Login complete")
+    self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
+    
+    }
+    else
+    {
+    print(error.localizedDescription)
+    }
+    
     }
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        
-        
+    
+    
     }
+    */
     
     /*
     // MARK: - Navigation
