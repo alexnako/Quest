@@ -5,3 +5,6 @@ use_frameworks!
 
 pod 'AFNetworking'
 pod 'Parse'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
