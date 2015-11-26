@@ -9,17 +9,21 @@
 import UIKit
 import Parse
 
-class ComposerViewController: UIViewController, UITextViewDelegate {
+class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
-    @IBOutlet weak var titlePlanField: UITextField!
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var titleField: UITextView!
+    @IBOutlet weak var titlePlaceholder: UILabel!
     @IBOutlet weak var tagsPlanField: UITextField!
     @IBOutlet weak var freetextPlanField: UITextView!
-    @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var bodyPlanField: UITextView!
     @IBOutlet weak var bodyPlaceholderLabel: UILabel!
     
-    
+    @IBOutlet weak var titleFieldHeight: NSLayoutConstraint!
     @IBOutlet weak var bodyPlanHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var searchTagsButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,17 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
         createButton.layer.borderColor = UIColor.blackColor().CGColor        
         
         bodyPlanField.delegate = self
+        titleField.delegate = self
+        tagsPlanField.delegate = self
+        tagsPlanField.addTarget(self, action: "tagsAdded:", forControlEvents: UIControlEvents.EditingChanged)
+
+        
+        createButton.enabled = false
+        createButton.alpha = 0.1
+        
+        searchTagsButton.enabled = false
+        searchTagsButton.alpha = 0
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,20 +53,70 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
     
     
     // CHANGE SIZE OF PLAN ACCORDING TO TEXT SIZE
-    func textViewDidChange(bodyPlanField: UITextView) {
-        bodyPlanField.sizeToFit()
-        bodyPlanField.layoutIfNeeded()
-        let height = bodyPlanField.sizeThatFits(CGSizeMake(bodyPlanField.frame.size.width, CGFloat.max)).height
-        if height > 60 {
-            bodyPlanHeight.constant = height
+    func textViewDidChangeSelection(textView: UITextView) {
+        
+        // TITLE
+        if textView == titleField {
+            titleField.sizeToFit()
+            titleField.layoutIfNeeded()
+            let height = titleField.sizeThatFits(CGSizeMake(titleField.frame.size.width, CGFloat.max)).height
+            if height > 120 {
+                titleFieldHeight.constant = height
+            }
+            if !self.titleField.text!.isEmpty {
+                titlePlaceholder.hidden = true
+                
+                // ENABLING CREATE IF THERE IS A TITLE
+                createButton.enabled = true
+                createButton.alpha = 1
+            } else {
+                titlePlaceholder.hidden = false
+                
+                // DISABLING CREATE IF NO TITLE
+                createButton.enabled = false
+                createButton.alpha = 0.1
+            }
+        
+        // BODY
+        } else if textView == bodyPlanField {
+            bodyPlanField.sizeToFit()
+            bodyPlanField.layoutIfNeeded()
+            let height = bodyPlanField.sizeThatFits(CGSizeMake(bodyPlanField.frame.size.width, CGFloat.max)).height
+            if height > 60 {
+                bodyPlanHeight.constant = height
+            }
+            
+            if !self.bodyPlanField.text!.isEmpty {
+                bodyPlaceholderLabel.hidden = true
+            } else {
+                bodyPlaceholderLabel.hidden = false
+            }
         }
-        if self.bodyPlanField.text != nil {
-            bodyPlaceholderLabel.hidden = true
+        
+    }
+
+    // ENABLING TAG SEARCH
+    func tagsAdded(textField: UITextField) {
+        if !tagsPlanField.text!.isEmpty {
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.searchTagsButton.alpha = 1
+                }, completion: { (Bool) -> Void in
+                    self.searchTagsButton.enabled = true
+            })
         } else {
-            bodyPlaceholderLabel.hidden = false
+            searchTagsButton.enabled = false
+            searchTagsButton.alpha = 0
+        }
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        if tagsPlanField.text == "" {
+            searchTagsButton.enabled = false
+            searchTagsButton.alpha = 0
         }
     }
     
+    
+    // SEARCH FOR TAGS
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if (segue.identifier == "segueSearch") {
             var svc = segue!.destinationViewController as! SearchViewController;
@@ -61,6 +126,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+
     
     // CREATING PLAN
     @IBAction func didPressCreate(sender: AnyObject) {
@@ -77,7 +143,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
                 print(tags.count)
             }
     
-        plan["title"] = titlePlanField.text
+        plan["title"] = titleField.text
         plan["user"] = PFUser.currentUser()?.username
         plan["tags"] = tags
         plan["body"] = bodyPlanField.text
@@ -86,7 +152,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
         plan.saveInBackgroundWithBlock { (status: Bool, error: NSError?) -> Void in
             if error == nil {
                 // print("create success")
-                self.titlePlanField.text = ""
+                self.titleField.text = ""
                 self.tagsPlanField.text = ""
                 self.bodyPlanField.text = ""
                 self.dismissViewControllerAnimated(true, completion: nil)
@@ -101,11 +167,9 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
     }
     
     // CANCELLING PLAN CREATION
-    
-    
     @IBAction func didPressCancel(sender: AnyObject) {
         
-        if titlePlanField.text != "" || bodyPlanField.text != "" || tagsPlanField.text != "" {
+        if titleField.text != "" || bodyPlanField.text != "" || tagsPlanField.text != "" {
         
             let alertController = UIAlertController(title: "Discard Plan", message: "Are you sure you want to discard this plan?", preferredStyle: .Alert)
             

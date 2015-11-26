@@ -95,22 +95,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     //CLICKING ON A PLAN
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-            print(indexPath.row)
-//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PlanCell
-//        planToEdit = cell.planTitleLabel.text
-//        
-//        performSegueWithIdentifier("readerSegue", sender: self)
-
-        // TODO: TRY CREATING SEGUE IN CODE
-//        let indexPath = tableView.indexPathForSelectedRow();
-//        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
-//        let storyboard = UIStoryboard(name: "YourStoryBoardFileName", bundle: nil)
-//        var viewController = storyboard.instantiateViewControllerWithIdentifier("viewControllerIdentifer") as AnotherViewController
-//        viewController.passedValue = currentCell.textLabel.text
-//        self.presentViewController(viewContoller, animated: true , completion: nil)
         
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PlanCell
+        planToEdit = plans[indexPath.row].objectId!
+        
+        performSegueWithIdentifier("readerSegue", sender: self)
+   
         
     }
     
