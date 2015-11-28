@@ -11,7 +11,6 @@ import UIKit
 
 class CircularCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var planTitle: UILabel!
-    
     var title: String = "" {
         didSet {
             // Change the plan title in label
@@ -26,7 +25,7 @@ class CircularCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        contentView.backgroundColor = UIColor.grayColor()
+        contentView.backgroundColor = UIColor.clearColor()
         contentView.layer.cornerRadius = 5
         contentView.layer.borderColor = UIColor.whiteColor().CGColor
         contentView.layer.borderWidth = 1

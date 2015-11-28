@@ -23,6 +23,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var plans: [PFObject]!
     var planToEdit: String!
     
+    var colors = [UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 159/255, green: 0/255, blue: 255/255, alpha: 1.0)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -146,11 +148,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return plans.count
     }
 
-    
+    // Create Cell (Plan Cards)
     func collectionView(collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
+            
             cell.title = plans[indexPath.row]["title"] as? String ?? "No Title"
+            let backgroundColor = colors[indexPath.row % colors.count]
+            cell.contentView.backgroundColor = backgroundColor
          return cell
     }
     
@@ -160,6 +165,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         planToEdit = plans[indexPath.section].objectId!
         performSegueWithIdentifier("readerSegue", sender: self)
     }
+    
     
 
 }
