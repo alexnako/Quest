@@ -9,15 +9,17 @@
 import UIKit
 import Parse
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var totalPlansLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newPlanButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     let currentUser = PFUser.currentUser()
+    let reuseIdentifier = "Cell"
     var plans: [PFObject]!
     var planToEdit: String!
     
@@ -25,6 +27,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         plans = []
         
         
@@ -43,6 +47,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // REFRESHING LIST
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refresh", object: nil)
+        // Register NIB
+        collectionView!.registerNib(UINib(nibName: "CircularCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
     
 
@@ -65,6 +71,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 //print("Successfully retrieved \(objects!.count) plans")
                 
                 self.plans = objects
+                // Reload cards
+                self.collectionView.reloadData()
                 self.tableView.reloadData()
                 
             } else {
@@ -118,10 +126,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
-    
-    
-    
-    
+
     
     
     // LOGOUT
@@ -135,5 +140,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func refreshList(notification: NSNotification){
         fetchPans()
     }
+    
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+            return plans.count
+    }
+
+    
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
+            cell.title = plans[indexPath.row]["title"] as? String ?? "No Title"
+            return cell
+    }
 
 }
+
