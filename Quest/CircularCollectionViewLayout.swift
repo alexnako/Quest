@@ -3,6 +3,7 @@
 //  Quest
 //
 //  Created by Haihong Wang on 11/27/15.
+//  Adopted from http://www.raywenderlich.com/107687/uicollectionview-custom-layout-tutorial-spinning-wheel
 //  Copyright © 2015 Haihong Wang. All rights reserved.
 //
 
@@ -92,6 +93,25 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         return true
+    }
+    
+    // "Snapping" on the end of wheel
+    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        var finalContentOffset = proposedContentOffset
+        let factor = -angleAtExtreme/(collectionViewContentSize().width -
+            CGRectGetWidth(collectionView!.bounds))
+        let proposedAngle = proposedContentOffset.x*factor
+        let ratio = proposedAngle/anglePerItem
+        var multiplier: CGFloat
+        if (velocity.x > 0) {
+            multiplier = ceil(ratio)
+        } else if (velocity.x < 0) {
+            multiplier = floor(ratio)
+        } else {
+            multiplier = round(ratio)
+        }
+        finalContentOffset.x = multiplier*anglePerItem/factor
+        return finalContentOffset
     }
 }
 

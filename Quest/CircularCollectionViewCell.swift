@@ -3,6 +3,7 @@
 //  Quest
 //
 //  Created by Haihong Wang on 11/27/15.
+//  Adopted from http://www.raywenderlich.com/107687/uicollectionview-custom-layout-tutorial-spinning-wheel
 //  Copyright © 2015 Haihong Wang. All rights reserved.
 //
 
