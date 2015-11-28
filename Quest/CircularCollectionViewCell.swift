@@ -25,6 +25,7 @@ class CircularCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        contentView.backgroundColor = UIColor.whiteColor()
         contentView.layer.cornerRadius = 5
         contentView.layer.borderColor = UIColor.blackColor().CGColor
         contentView.layer.borderWidth = 1

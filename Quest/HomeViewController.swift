@@ -151,8 +151,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
             cell.title = plans[indexPath.row]["title"] as? String ?? "No Title"
-            return cell
+         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        // let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CircularCollectionViewCell
+        planToEdit = plans[indexPath.section].objectId!
+        performSegueWithIdentifier("readerSegue", sender: self)
+    }
+    
 
 }
 
