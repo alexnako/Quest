@@ -87,7 +87,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath)
-        -> UICollectionViewLayoutAttributes! {
+        -> (UICollectionViewLayoutAttributes!) {
             return attributesList[indexPath.row]
     }
     
@@ -95,7 +95,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         return true
     }
     
-    // "Snapping" on the end of wheel
+    // "Snapping" on the edge of cards
     override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         var finalContentOffset = proposedContentOffset
         let factor = -angleAtExtreme/(collectionViewContentSize().width -
