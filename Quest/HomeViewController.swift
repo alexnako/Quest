@@ -9,22 +9,28 @@
 import UIKit
 import Parse
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var totalPlansLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newPlanButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     let currentUser = PFUser.currentUser()
+    let reuseIdentifier = "Cell"
     var plans: [PFObject]!
     var planToEdit: String!
+    
+    var colors = [UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 159/255, green: 0/255, blue: 255/255, alpha: 1.0)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         plans = []
         
         
@@ -43,6 +49,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // REFRESHING LIST
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refresh", object: nil)
+        // Register NIB
+        collectionView!.registerNib(UINib(nibName: "CircularCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
     
 
@@ -65,6 +73,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 //print("Successfully retrieved \(objects!.count) plans")
                 
                 self.plans = objects
+                // Reload cards
+                self.collectionView.reloadData()
                 self.tableView.reloadData()
                 
             } else {
@@ -118,10 +128,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
-    
-    
-    
-    
+
     
     
     // LOGOUT
@@ -135,5 +142,31 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func refreshList(notification: NSNotification){
         fetchPans()
     }
+    
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+            return plans.count
+    }
+
+    // Create Cell (Plan Cards)
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
+            
+            cell.title = plans[indexPath.row]["title"] as? String ?? "No Title"
+            let backgroundColor = colors[indexPath.row % colors.count]
+            cell.contentView.backgroundColor = backgroundColor
+         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        // let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CircularCollectionViewCell
+        planToEdit = plans[indexPath.section].objectId!
+        performSegueWithIdentifier("readerSegue", sender: self)
+    }
+    
+    
 
 }
+

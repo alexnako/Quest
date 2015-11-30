@@ -11,11 +11,25 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Parse
 import ParseFacebookUtilsV4
+import VideoSplash
 
-class WelcomeViewController: UIViewController {
+// Use VideoSplash
+class WelcomeViewController: VideoSplashViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("video-1448868014", ofType: "mp4")!)
+        self.videoFrame = view.frame
+        self.fillMode = .ResizeAspectFill
+        self.alwaysRepeat = true
+        self.sound = false
+        // Notice that the startTime and duration need to be set based on actual video.
+        self.startTime = 0
+        self.duration = 9.64
+        self.alpha = 0.7
+        self.backgroundColor = UIColor.blackColor()
+        self.contentURL = url
+        self.restartForeground = true
         
         /* if (FBSDKAccessToken.currentAccessToken() == nil)
         {

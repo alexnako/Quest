@@ -46,6 +46,7 @@ PODS:
     - FBSDKCoreKit (~> 4.8)
     - FBSDKLoginKit (~> 4.8)
     - Parse (~> 1.9)
+  - VideoSplash (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Parse
   - ParseFacebookUtilsV4
+  - VideoSplash
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -63,5 +65,6 @@ SPEC CHECKSUMS:
   FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseFacebookUtilsV4: eab9b4ade12f0800b4d30f6b808bca55ce17a0e9
+  VideoSplash: b862d41726b22fefd47ffe845c0524616cf5ab0e
 
 COCOAPODS: 0.39.0
