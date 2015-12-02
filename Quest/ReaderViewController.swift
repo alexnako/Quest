@@ -30,7 +30,7 @@ class ReaderViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(passedValue)
+        //print(passedValue)
         
         bodyPlanField.delegate = self
         titleField.delegate = self
@@ -54,7 +54,7 @@ class ReaderViewController: UIViewController, UITextViewDelegate {
             if error != nil {
                 print(error)
             } else {
-                print(object)
+                //print(object)
                 self.plan = object
                 self.titleField.text = self.plan!["title"] as? String
                 
@@ -125,9 +125,9 @@ class ReaderViewController: UIViewController, UITextViewDelegate {
                 var tags = []
                 if !self.tagsPlanField.text!.isEmpty {
                     tags = self.tagsPlanField.text!.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ","))
-                    print(tags)
+                    //print(tags)
                     tags = tags.map { $0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) }
-                    print(tags.count)
+                    //print(tags.count)
                 }
                 
                 

@@ -9,11 +9,10 @@
 import UIKit
 import Parse
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var totalPlansLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newPlanButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,8 +26,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
         plans = []
@@ -75,7 +72,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.plans = objects
                 // Reload cards
                 self.collectionView.reloadData()
-                self.tableView.reloadData()
                 
             } else {
                 // Log details of the failure
@@ -86,48 +82,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    
-    //TABLE VIEW WITH PLANS
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plans.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlanCell") as! PlanCell
-        
-        let plan = plans[indexPath.row]
-        
-        cell.planTitleLabel.text = plan["title"] as? String ?? "No title"
-        
-        return cell
-    }
-    
-    
-    
-    //CLICKING ON A PLAN
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PlanCell
-        planToEdit = plans[indexPath.row].objectId!
-        
-        performSegueWithIdentifier("readerSegue", sender: self)
-   
-        
-    }
-    
-    // PASSING VARIABLE TO PLAN READER – WON'T NEED THIS IF READER IS CALLED FROM DIDSELECT
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if (segue.identifier == "readerSegue") {
-            
-            // initialize new view controller and cast it as your view controller
-            let viewController = segue.destinationViewController as! ReaderViewController
-            // your new view controller should have property that will store passed value
-            viewController.passedValue = planToEdit
-        }
-        
-    }
+
 
     
     
@@ -161,11 +116,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        // let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CircularCollectionViewCell
-        planToEdit = plans[indexPath.section].objectId!
+        planToEdit = plans[indexPath.row].objectId!
         performSegueWithIdentifier("readerSegue", sender: self)
     }
     
+    
+    // PASSING VARIABLE TO PLAN READER – WON'T NEED THIS IF READER IS CALLED FROM DIDSELECT
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "readerSegue") {
+            
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destinationViewController as! ReaderViewController
+            // your new view controller should have property that will store passed value
+            viewController.passedValue = planToEdit
+        }
+        
+    }
     
 
 }

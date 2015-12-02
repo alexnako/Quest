@@ -18,14 +18,16 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
 
-    var toPass:String!
+    var searchString:String!
+    var objectId: String!
+    
     var photos: [NSDictionary]!
     var photosSelected: [String]!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchField.text = toPass
+        searchField.text = searchString
         photos = []
         photosSelected = []
         
@@ -47,6 +49,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         searchImages()
         
+        
     }
     
     func searchImages () {
@@ -54,13 +57,23 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         // REQUESTING INSTAGRAM
             if searchField.text != nil {
             
+            //INSTAGRAM
             let url = NSURL(string: "https://api.instagram.com/v1/tags/\(searchField.text!)/media/recent?access_token=3044669.1677ed0.c6d74cb75c3b444fadfd4ca68a6e8975")!
+                
+            // FLICKR
+            //let url = NSURL(string: "https://api.flickr.com/services/feeds/photos_public.gne?tags=\(searchField.text!)&tagmode=any&format=json&nojsoncallback=1")!
             let request = NSURLRequest(URL: url)
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
                 
+                
                 //CREATING DICTIONARY FROM JASON
                 let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+
+                //INSTAGRAM
                 self.photos = dictionary["data"] as! [NSDictionary]
+
+                //FLICKR
+                //self.photos = dictionary["items"] as! [NSDictionary]
                 self.collectionView.reloadData()
             }
         }
@@ -80,20 +93,34 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell:CollViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollViewCell
         
         let photo = self.photos[indexPath.row]
+        
+        // INSTAGRAM
         let urlString = photo.valueForKeyPath("images.low_resolution.url") as! String
         cell.imgCell.setImageWithURL(NSURL(string: urlString)!)
+        cell.imgCell.transform = CGAffineTransformMakeScale(1.4, 1.4)
         
         return cell
+
+        
+        //FLICKR
+        //let urlString = photo.valueForKeyPath("media.m") as! String
     }
 
     //IDENTIFY CELL CLICKED
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollViewCell
         
+        
+        // STORING URL
+        let photo = self.photos[indexPath.row]
+        let urlString = photo.valueForKeyPath("images.low_resolution.url") as! String
+        
         if cell.checkButton.selected == true {
             cell.checkButton.selected = false
+            photosSelected = photosSelected.filter() { $0 != urlString }
         } else {
             cell.checkButton.selected = true
+            photosSelected.append(urlString)
         }
         
     }
@@ -105,11 +132,15 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Dispose of any resources that can be recreated.
     }
     
-
-
-    @IBAction func didPressBack(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-
+    // SEARCH FOR TAGS
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        var svc = segue!.destinationViewController as! ComposerViewController;
+        svc.photosSelected = photosSelected
     }
+
+    
+    
+    
+
     
 }

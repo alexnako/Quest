@@ -24,9 +24,16 @@ class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     @IBOutlet weak var searchTagsButton: UIButton!
     
+    var photosSelection: [String]!
+    var photosSelected: [String]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleField.becomeFirstResponder()
+        
+        photosSelected = []
+        photosSelection = []
         
         createButton.layer.cornerRadius = 4;
         createButton.layer.borderWidth = 1;
@@ -43,9 +50,12 @@ class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
         searchTagsButton.enabled = false
         searchTagsButton.alpha = 0
-        
+
     }
     
+    @IBAction func didPressSelected(sender: AnyObject) {
+        print(photosSelected)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -120,13 +130,46 @@ class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldD
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if (segue.identifier == "segueSearch") {
             var svc = segue!.destinationViewController as! SearchViewController;
-            
-            svc.toPass = tagsPlanField.text
+            svc.searchString = tagsPlanField.text
             
         }
     }
     
-
+    // ADD SELECTED IMAGES
+    @IBAction func unwindToVC(segue:UIStoryboardSegue) {
+        
+        if segue.sourceViewController.isKindOfClass(SearchViewController) {
+            let picker = segue.sourceViewController as! SearchViewController
+            if (picker.photosSelected != nil) {
+                print(picker.photosSelected)
+                let photos = photosSelection + picker.photosSelected
+                photosSelection = photos
+                let dedupe = removeDuplicates(photosSelection)
+                photosSelection = dedupe
+                print(photosSelection)
+            }
+        }
+        
+    }
+    
+    //DEDUPE IMAGES ALREADY SELECTED
+    func removeDuplicates(array: [String]) -> [String] {
+        var encountered = Set<String>()
+        var result: [String] = []
+        for value in array {
+            if encountered.contains(value) {
+                // Do not add a duplicate element.
+            }
+            else {
+                // Add value to the set.
+                encountered.insert(value)
+                // ... Append the value.
+                result.append(value)
+            }
+        }
+        return result
+    }
+    
     
     // CREATING PLAN
     @IBAction func didPressCreate(sender: AnyObject) {
@@ -138,15 +181,16 @@ class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldD
         var tags = []
             if !tagsPlanField.text!.isEmpty {
                 tags = tagsPlanField.text!.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ","))
-                print(tags)
+                //print(tags)
                 tags = tags.map { $0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) }
-                print(tags.count)
+                //print(tags.count)
             }
     
         plan["title"] = titleField.text
         plan["user"] = PFUser.currentUser()?.username
         plan["tags"] = tags
         plan["body"] = bodyPlanField.text
+        plan["imgUrl"] = photosSelection
     
         // SAVING PLAN
         plan.saveInBackgroundWithBlock { (status: Bool, error: NSError?) -> Void in

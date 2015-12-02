@@ -347,7 +347,6 @@
                         <outlet property="collectionView" destination="dFT-RO-jqF" id="MFQ-YN-nSa"/>
                         <outlet property="logoutButton" destination="P4M-Gk-oNF" id="80C-U9-j2o"/>
                         <outlet property="newPlanButton" destination="wuR-dQ-NFX" id="GY7-OD-b8f"/>
-                        <outlet property="tableView" destination="Ms3-t9-iDY" id="LFj-F6-QR1"/>
                         <outlet property="usernameLabel" destination="ed0-Zy-UyG" id="Tpv-jL-zxa"/>
                         <segue destination="oTh-7h-AXK" kind="presentation" identifier="readerSegue" id="Meh-d5-kIw"/>
                     </connections>
@@ -394,7 +393,7 @@
                                 <animations/>
                                 <state key="normal" image="iconBack"/>
                                 <connections>
-                                    <action selector="didPressBack:" destination="CbW-8k-g68" eventType="touchUpInside" id="bCp-Uf-b06"/>
+                                    <segue destination="U92-CQ-sXq" kind="unwind" unwindAction="unwindToVC:" id="1N5-Rg-Q7t"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KFu-Vb-BTu">
@@ -470,6 +469,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu0-OK-NUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="U92-CQ-sXq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4262" y="339"/>
         </scene>
