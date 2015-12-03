@@ -39,7 +39,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         // COLLECTION VIEW LAYOUT
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.itemSize = CGSize(width: screenWidth/2, height: screenWidth/2)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         collectionView.collectionViewLayout = layout
@@ -97,7 +97,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         // INSTAGRAM
         let urlString = photo.valueForKeyPath("images.low_resolution.url") as! String
         cell.imgCell.setImageWithURL(NSURL(string: urlString)!)
-        cell.imgCell.transform = CGAffineTransformMakeScale(1.4, 1.4)
+        cell.imgCell.transform = CGAffineTransformMakeScale(1.5, 1.5)
         
         return cell
 

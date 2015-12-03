@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import AFNetworking
 
 class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
@@ -18,6 +19,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldD
     @IBOutlet weak var freetextPlanField: UITextView!
     @IBOutlet weak var bodyPlanField: UITextView!
     @IBOutlet weak var bodyPlaceholderLabel: UILabel!
+    @IBOutlet weak var photoDrawer: UIView!
     
     @IBOutlet weak var titleFieldHeight: NSLayoutConstraint!
     @IBOutlet weak var bodyPlanHeight: NSLayoutConstraint!
@@ -141,15 +143,37 @@ class ComposerViewController: UIViewController, UITextViewDelegate, UITextFieldD
         if segue.sourceViewController.isKindOfClass(SearchViewController) {
             let picker = segue.sourceViewController as! SearchViewController
             if (picker.photosSelected != nil) {
-                print(picker.photosSelected)
+                //print(picker.photosSelected)
                 let photos = photosSelection + picker.photosSelected
                 photosSelection = photos
                 let dedupe = removeDuplicates(photosSelection)
                 photosSelection = dedupe
-                print(photosSelection)
+                //print(photosSelection)
             }
         }
-        
+        refreshPhotoDrawer ()
+    }
+    
+    // VISUALIZING SELECTED IMAGES
+    func refreshPhotoDrawer () {
+        //print(photosSelection.count)
+        for var i = 0; i <= (photosSelection.count-1); i++ {
+            let dimension = self.view.frame.width/2
+            let idivider = CGFloat(i)/2
+            let positioner = floor(idivider) * dimension
+            var imageFrame: UIView
+            if i % 2 == 0 {
+                imageFrame  = UIView(frame:CGRectMake(0, positioner, dimension, dimension));
+            } else {
+                imageFrame  = UIView(frame:CGRectMake(dimension, positioner, dimension, dimension));
+            }
+            imageFrame.clipsToBounds = true
+            photoDrawer.addSubview(imageFrame)
+            var imageView: UIImageView = UIImageView(frame:CGRectMake(0, 0, dimension, dimension))
+            imageFrame.addSubview(imageView)
+            imageView.setImageWithURL(NSURL(string: photosSelection[i])!)
+            imageView.transform = CGAffineTransformMakeScale(1.5, 1.5)
+        }
     }
     
     //DEDUPE IMAGES ALREADY SELECTED
