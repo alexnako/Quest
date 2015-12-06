@@ -60,12 +60,12 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-Uf-S9E">
                                 <rect key="frame" x="91" y="260" width="128" height="47"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iconwelcomescreen" translatesAutoresizingMaskIntoConstraints="NO" id="Wgi-ga-a45">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="iconwelcomescreen" translatesAutoresizingMaskIntoConstraints="NO" id="Wgi-ga-a45">
                                         <rect key="frame" x="15" y="8" width="32" height="32"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7z-Gu-8b6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7z-Gu-8b6">
                                         <rect key="frame" x="60" y="13" width="52" height="22"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
@@ -73,7 +73,7 @@
                                 <constraints>
                                     <constraint firstItem="Wgi-ga-a45" firstAttribute="centerY" secondItem="zIk-Uf-S9E" secondAttribute="centerY" id="BpU-kR-uYp"/>
                                     <constraint firstAttribute="height" constant="47" id="Coi-mD-xiW"/>
-                                    <constraint firstAttribute="width" constant="128" id="GEq-pt-0IK"/>
+                                    <constraint firstAttribute="width" constant="166" id="GEq-pt-0IK"/>
                                     <constraint firstItem="Wgi-ga-a45" firstAttribute="leading" secondItem="zIk-Uf-S9E" secondAttribute="leading" constant="15" id="GR9-7I-V0l"/>
                                     <constraint firstItem="Wgi-ga-a45" firstAttribute="trailing" secondItem="zIk-Uf-S9E" secondAttribute="leading" constant="19" id="S5e-LJ-BEV"/>
                                     <constraint firstItem="Wgi-ga-a45" firstAttribute="centerY" secondItem="zIk-Uf-S9E" secondAttribute="centerY" id="d9s-Df-YPf"/>

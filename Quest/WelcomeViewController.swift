@@ -34,7 +34,7 @@ class WelcomeViewController: VideoSplashViewController {
         // Notice that the startTime and duration need to be set based on actual video.
         self.startTime = 0
         self.duration = 9.64
-        self.alpha = 0.8
+        self.alpha = 0.4
         self.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
         self.contentURL = url
         self.restartForeground = true
@@ -55,7 +55,8 @@ class WelcomeViewController: VideoSplashViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(0.6, delay: 0.0, options: .CurveEaseOut, animations: {
+        super.viewDidAppear(animated)
+        UIView.animateWithDuration(2, delay: 0.0, options: .CurveEaseOut, animations: {
             () -> Void in
             
             self.iconView.alpha = 1
@@ -69,7 +70,7 @@ class WelcomeViewController: VideoSplashViewController {
                     }, completion: { (finished) -> Void in }
                 )
         })
-        super.viewDidAppear(animated)
+        
     }
     
     override func didReceiveMemoryWarning() {
