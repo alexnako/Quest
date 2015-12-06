@@ -20,14 +20,12 @@ class WelcomeViewController: VideoSplashViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var facebookIcon: UIImageView!
-    var initialY: CGFloat!
-    let offset: CGFloat = 135
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialY = iconView.frame.origin.y
-      
+        
         let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("video-1448868014", ofType: "mp4")!)
+        
         self.videoFrame = view.frame
         self.fillMode = .ResizeAspectFill
         self.alwaysRepeat = true
@@ -45,43 +43,18 @@ class WelcomeViewController: VideoSplashViewController {
         createAccountButton.layer.borderWidth = 2;
         createAccountButton.layer.borderColor = UIColor.whiteColor().CGColor
         
-        /* if (FBSDKAccessToken.currentAccessToken() == nil)
-        {
-        print("Not logged in")
-        
-        }
-        else
-        {
-        print("Logged in")
-        }
-        
-        var loginButton = FBSDKLoginButton()
-        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        loginButton.center = self.view.center
-        
-        loginButton.delegate = self
-        
-        self.view.addSubview(loginButton)
-        */
-        
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(animated: Bool) {
-        //initialY = iconView.frame.origin.y
-        //iconView.frame.origin.y = self.initialY + self.offset
-        // iconView.center = CGPoint(x: iconView.center.x, y: iconView.center.y + self.offset)
-        
         iconView.alpha = 0
         createAccountButton.alpha = 0
         login.alpha = 0
         facebookIcon.alpha = 0
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        UIView.animateWithDuration(2, delay: 0.0, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.6, delay: 0.0, options: .CurveEaseOut, animations: {
             () -> Void in
             
             self.iconView.alpha = 1
@@ -89,12 +62,12 @@ class WelcomeViewController: VideoSplashViewController {
             self.login.alpha = 1
             self.facebookIcon.alpha = 1
             }, completion: { finished in
-                UIView.animateWithDuration(2.0, animations: {
-                   () -> Void in
+                UIView.animateWithDuration(0.6, delay: 0.6, options: .CurveEaseOut, animations:  {
+                    
                     self.iconView.frame.origin.y -= self.view.frame.size.height * 0.33
-                })
+                    }, completion: { (finished) -> Void in }
+                )
         })
-       
         super.viewDidAppear(animated)
     }
     
@@ -108,7 +81,7 @@ class WelcomeViewController: VideoSplashViewController {
         let permissions = ["public_profile", "email"]
         
         PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) { (user:PFUser?, error:NSError?) -> Void in
-            if error == nil
+            if (error == nil && user != nil)
             {
                 self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
                 print("Login complete")
@@ -116,7 +89,7 @@ class WelcomeViewController: VideoSplashViewController {
             }
             else
             {
-                print(error!.localizedDescription)
+                print(error?.localizedDescription)
             }
             
             /*

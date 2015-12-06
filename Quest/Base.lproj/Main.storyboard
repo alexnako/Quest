@@ -100,6 +100,7 @@
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="leading" secondItem="Qpx-zU-OZt" secondAttribute="trailing" constant="8" id="9Z4-KL-JHd"/>
                             <constraint firstItem="zIk-Uf-S9E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AJs-9p-eJr"/>
                             <constraint firstItem="zIk-Uf-S9E" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="IUi-kS-CA0"/>
+                            <constraint firstItem="zIk-Uf-S9E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-155" id="SmX-ix-w3I"/>
                             <constraint firstItem="Qpx-zU-OZt" firstAttribute="centerY" secondItem="V5t-n1-Kod" secondAttribute="centerY" id="Unx-fb-P1A"/>
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="14" id="Uty-6Z-tDk"/>
                             <constraint firstItem="zIk-Uf-S9E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VYX-WM-GTM"/>
@@ -117,6 +118,7 @@
                                 <exclude reference="1mu-Ue-3Qm"/>
                                 <exclude reference="6e4-pk-VhU"/>
                                 <exclude reference="IUi-kS-CA0"/>
+                                <exclude reference="SmX-ix-w3I"/>
                                 <exclude reference="VYX-WM-GTM"/>
                                 <exclude reference="mXP-fo-3os"/>
                             </mask>
