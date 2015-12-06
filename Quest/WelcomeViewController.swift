@@ -16,6 +16,9 @@ import VideoSplash
 // Use VideoSplash
 class WelcomeViewController: VideoSplashViewController {
     
+    
+    @IBOutlet weak var createAccountButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("video-1448868014", ofType: "mp4")!)
@@ -30,6 +33,11 @@ class WelcomeViewController: VideoSplashViewController {
         self.backgroundColor = UIColor.blackColor()
         self.contentURL = url
         self.restartForeground = true
+        
+        //CreateAccount button UI
+        createAccountButton.layer.cornerRadius = 2;
+        createAccountButton.layer.borderWidth = 1;
+        createAccountButton.layer.borderColor = UIColor.whiteColor().CGColor
         
         /* if (FBSDKAccessToken.currentAccessToken() == nil)
         {
