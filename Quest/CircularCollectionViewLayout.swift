@@ -30,7 +30,8 @@ class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
 }
 
 class CircularCollectionViewLayout: UICollectionViewLayout {
-    let itemSize = CGSize(width: 240, height: 320)
+    // Default size
+    var itemSize = CGSize(width: 240, height: 320)
     
     var angleAtExtreme: CGFloat {
         return collectionView!.numberOfItemsInSection(0) > 0 ?
@@ -66,6 +67,9 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         super.prepareLayout()
         
         let centerX = collectionView!.contentOffset.x + (CGRectGetWidth(collectionView!.bounds) / 2.0)
+        itemSize.width = CGRectGetWidth(collectionView!.bounds) * 0.6
+        itemSize.height = CGRectGetHeight(collectionView!.bounds) * 0.6
+        radius = itemSize.height * 2
         let anchorPointY = ((itemSize.height / 2.0) + radius) / itemSize.height
         attributesList = (0..<collectionView!.numberOfItemsInSection(0)).map { (i)
             -> CircularCollectionViewLayoutAttributes in
