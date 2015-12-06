@@ -51,6 +51,8 @@ class WelcomeViewController: VideoSplashViewController {
         createAccountButton.alpha = 0
         login.alpha = 0
         facebookIcon.alpha = 0
+        // change status bar to white
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         super.viewWillAppear(animated)
     }
     
@@ -93,46 +95,13 @@ class WelcomeViewController: VideoSplashViewController {
             {
                 print(error?.localizedDescription)
             }
-            
-            /*
-            PFAnonymousUtils.logInWithBlock {
-            (user: PFUser?, error: NSError?) -> Void in
-            if error != nil || user == nil {
-            print("Anonymous login failed.")
-            } else {
-            print("Anonymous user logged in.")
-            }
-            }
-            */
         }
     }
-    /*func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-    if error == nil
-    {
-    print("Login complete")
-    self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
     }
-    else
-    {
-    print(error.localizedDescription)
-    }
-    
-    }
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-    
-    
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }
