@@ -35,12 +35,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         plans = []
         
         
-        newPlanButton.layer.cornerRadius = 4;
-        newPlanButton.layer.borderWidth = 1;
-        newPlanButton.layer.borderColor = UIColor.blackColor().CGColor
-        logoutButton.layer.cornerRadius = 4;
-        logoutButton.layer.borderWidth = 1;
-        logoutButton.layer.borderColor = UIColor.blackColor().CGColor
+        //newPlanButton.layer.cornerRadius = 4;
+        //newPlanButton.layer.borderWidth = 1;
+        //newPlanButton.layer.borderColor = UIColor.blackColor().CGColor
+        //logoutButton.layer.cornerRadius = 4;
+        //logoutButton.layer.borderWidth = 1;
+        //logoutButton.layer.borderColor = UIColor.blackColor().CGColor
+        profilePictureView.layer.borderWidth = 1
+        profilePictureView.layer.borderColor = UIColor.darkGrayColor().CGColor
         
         // Set profile image view roundded
         self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
@@ -74,7 +76,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Register NIB
         collectionView!.registerNib(UINib(nibName: "CircularCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        
+        // change status bar to white
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        super.viewWillAppear(animated)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -158,7 +166,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
-    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+    }
     
 }
 

@@ -26,9 +26,9 @@ class CircularCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         contentView.backgroundColor = UIColor.clearColor()
-        contentView.layer.cornerRadius = 5
-        contentView.layer.borderColor = UIColor.whiteColor().CGColor
-        contentView.layer.borderWidth = 1
+        contentView.layer.cornerRadius = 2
+        //contentView.layer.borderColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0).CGColor
+        //contentView.layer.borderWidth = 1
         contentView.layer.shouldRasterize = true
         contentView.layer.rasterizationScale = UIScreen.mainScreen().scale
         contentView.clipsToBounds = true
