@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-import ParseUI
 import ParseFacebookUtilsV4
 import FBSDKCoreKit
 
@@ -47,9 +46,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
         self.profilePictureView.clipsToBounds = true;
         
-        // Display User Name or Profile Picture if from FB
+        // Display User Name or Profile Picture if from Facebook
         if (PFFacebookUtils.isLinkedWithUser(self.currentUser!)) {
-            // User is from FB
+            // User is from Facebook
             self.usernameLabel.hidden = true
             var accessToken = FBSDKAccessToken.currentAccessToken().tokenString
             let url = NSURL(string: "https://graph.facebook.com/me/picture?type=large&return_ssl_resources=1&access_token="+accessToken)

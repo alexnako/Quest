@@ -128,6 +128,7 @@
                     <connections>
                         <outlet property="createAccountButton" destination="8VP-HR-F83" id="EJs-4E-pCA"/>
                         <outlet property="facebookIcon" destination="Qpx-zU-OZt" id="1ca-5T-3bs"/>
+                        <outlet property="facebookLoginButton" destination="V5t-n1-Kod" id="rLb-Mc-TKM"/>
                         <outlet property="iconView" destination="zIk-Uf-S9E" id="YAc-Cn-Exd"/>
                         <outlet property="login" destination="ECf-FV-zIv" id="q6N-QD-U51"/>
                         <segue destination="obE-8Z-Ppf" kind="presentation" identifier="facebookLoginSegue" animates="NO" id="An1-wP-O1H"/>
