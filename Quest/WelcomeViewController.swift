@@ -16,11 +16,17 @@ import VideoSplash
 // Use VideoSplash
 class WelcomeViewController: VideoSplashViewController {
     
-    
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var facebookIcon: UIImageView!
+    var initialY: CGFloat!
+    let offset: CGFloat = 135
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialY = iconView.frame.origin.y
+      
         let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("video-1448868014", ofType: "mp4")!)
         self.videoFrame = view.frame
         self.fillMode = .ResizeAspectFill
@@ -59,6 +65,37 @@ class WelcomeViewController: VideoSplashViewController {
         */
         
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(animated: Bool) {
+        //initialY = iconView.frame.origin.y
+        //iconView.frame.origin.y = self.initialY + self.offset
+        // iconView.center = CGPoint(x: iconView.center.x, y: iconView.center.y + self.offset)
+        
+        iconView.alpha = 0
+        createAccountButton.alpha = 0
+        login.alpha = 0
+        facebookIcon.alpha = 0
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        UIView.animateWithDuration(2, delay: 0.0, options: .CurveEaseOut, animations: {
+            () -> Void in
+            
+            self.iconView.alpha = 1
+            self.createAccountButton.alpha = 1
+            self.login.alpha = 1
+            self.facebookIcon.alpha = 1
+            }, completion: { finished in
+                UIView.animateWithDuration(2.0, animations: {
+                   () -> Void in
+                    self.iconView.frame.origin.y -= self.view.frame.size.height * 0.33
+                })
+        })
+       
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
