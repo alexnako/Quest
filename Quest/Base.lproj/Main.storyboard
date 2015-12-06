@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECf-FV-zIv">
-                                <rect key="frame" x="141" y="384" width="39" height="30"/>
+                                <rect key="frame" x="141" y="390" width="39" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="LogIn">
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-n1-Kod">
-                                <rect key="frame" x="102" y="430" width="145" height="30"/>
+                                <rect key="frame" x="102" y="436" width="145" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="LogIn with Facebook">
@@ -55,22 +55,46 @@
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="app-facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Qpx-zU-OZt">
-                                <rect key="frame" x="78" y="437" width="16" height="16"/>
+                                <rect key="frame" x="78" y="443" width="16" height="16"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-Uf-S9E">
+                                <rect key="frame" x="96" y="261" width="128" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7z-Gu-8b6">
+                                        <rect key="frame" x="65" y="12" width="52" height="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iconwelcomescreen" translatesAutoresizingMaskIntoConstraints="NO" id="Wgi-ga-a45">
+                                        <rect key="frame" x="19" y="7" width="32" height="32"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Coi-mD-xiW"/>
+                                    <constraint firstAttribute="width" constant="128" id="GEq-pt-0IK"/>
+                                    <constraint firstItem="Wgi-ga-a45" firstAttribute="leading" secondItem="zIk-Uf-S9E" secondAttribute="leading" constant="19" id="S5e-LJ-BEV"/>
+                                    <constraint firstAttribute="trailing" secondItem="F7z-Gu-8b6" secondAttribute="trailing" constant="11" id="joL-Mo-p25"/>
+                                    <constraint firstItem="Wgi-ga-a45" firstAttribute="centerY" secondItem="zIk-Uf-S9E" secondAttribute="centerY" id="uPb-Gq-jWb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="zIk-Uf-S9E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1mu-Ue-3Qm"/>
                             <constraint firstAttribute="trailing" secondItem="8VP-HR-F83" secondAttribute="trailing" constant="40" id="940-iZ-08R"/>
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="leading" secondItem="Qpx-zU-OZt" secondAttribute="trailing" constant="8" id="9Z4-KL-JHd"/>
                             <constraint firstItem="Qpx-zU-OZt" firstAttribute="centerY" secondItem="V5t-n1-Kod" secondAttribute="centerY" id="Unx-fb-P1A"/>
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="14" id="Uty-6Z-tDk"/>
+                            <constraint firstItem="zIk-Uf-S9E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VYX-WM-GTM"/>
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="top" secondItem="ECf-FV-zIv" secondAttribute="bottom" constant="16" id="ZHH-cA-JDm"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fgN-DG-5fb"/>
+                            <constraint firstItem="F7z-Gu-8b6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fpk-d4-7p8"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="gky-Ze-GPu"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="Qpx-zU-OZt" secondAttribute="bottom" constant="8" symbolic="YES" id="mXP-fo-3os"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8VP-HR-F83" secondAttribute="bottom" constant="32" id="yJL-qr-o7f"/>
-                            <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="V5t-n1-Kod" secondAttribute="bottom" constant="36" id="ywD-OU-c7H"/>
+                            <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="V5t-n1-Kod" secondAttribute="bottom" constant="30" id="ywD-OU-c7H"/>
                             <constraint firstItem="ECf-FV-zIv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyy-jH-9nb"/>
                         </constraints>
                         <variation key="default">
@@ -946,6 +970,7 @@
         <image name="iconCheckPhotoOn" width="44" height="44"/>
         <image name="iconClose" width="44" height="44"/>
         <image name="iconSearch" width="44" height="44"/>
+        <image name="iconwelcomescreen" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="An1-wP-O1H"/>

@@ -29,14 +29,14 @@ class WelcomeViewController: VideoSplashViewController {
         // Notice that the startTime and duration need to be set based on actual video.
         self.startTime = 0
         self.duration = 9.64
-        self.alpha = 0.7
+        self.alpha = 0.5
         self.backgroundColor = UIColor.blackColor()
         self.contentURL = url
         self.restartForeground = true
         
         //CreateAccount button UI
         createAccountButton.layer.cornerRadius = 2;
-        createAccountButton.layer.borderWidth = 1;
+        createAccountButton.layer.borderWidth = 2;
         createAccountButton.layer.borderColor = UIColor.whiteColor().CGColor
         
         /* if (FBSDKAccessToken.currentAccessToken() == nil)
