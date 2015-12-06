@@ -21,6 +21,7 @@ class WelcomeViewController: VideoSplashViewController {
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var facebookIcon: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,8 +34,8 @@ class WelcomeViewController: VideoSplashViewController {
         // Notice that the startTime and duration need to be set based on actual video.
         self.startTime = 0
         self.duration = 9.64
-        self.alpha = 0.5
-        self.backgroundColor = UIColor.blackColor()
+        self.alpha = 0.8
+        self.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
         self.contentURL = url
         self.restartForeground = true
         
