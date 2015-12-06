@@ -29,19 +29,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECf-FV-zIv">
-                                <rect key="frame" x="141" y="430" width="38" height="30"/>
+                                <rect key="frame" x="141" y="402" width="39" height="30"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="LogIn">
-                                    <color key="titleColor" red="0.17180199870000001" green="0.19934763180000001" blue="0.26978772099999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="SRd-AU-XOL" kind="presentation" id="eww-Z6-nYz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-n1-Kod">
-                                <rect key="frame" x="90" y="462" width="141" height="30"/>
+                                <rect key="frame" x="88" y="452" width="145" height="30"/>
                                 <animations/>
-                                <state key="normal" title="LogIn with Facebook"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="LogIn with Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="didPressFacebookLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhV-QT-1L2"/>
                                 </connections>
@@ -51,10 +55,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uty-6Z-tDk"/>
-                            <constraint firstItem="V5t-n1-Kod" firstAttribute="top" secondItem="ECf-FV-zIv" secondAttribute="bottom" constant="2" id="ZHH-cA-JDm"/>
+                            <constraint firstItem="V5t-n1-Kod" firstAttribute="top" secondItem="ECf-FV-zIv" secondAttribute="bottom" constant="20" id="ZHH-cA-JDm"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fgN-DG-5fb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8VP-HR-F83" secondAttribute="bottom" constant="32" id="yJL-qr-o7f"/>
-                            <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="V5t-n1-Kod" secondAttribute="bottom" constant="14" id="ywD-OU-c7H"/>
+                            <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="V5t-n1-Kod" secondAttribute="bottom" constant="24" id="ywD-OU-c7H"/>
                             <constraint firstItem="ECf-FV-zIv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyy-jH-9nb"/>
                         </constraints>
                     </view>
@@ -89,8 +93,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P74-3J-IIG">
-                                <rect key="frame" x="181" y="156" width="240" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P74-3J-IIG">
+                                <rect key="frame" x="40" y="156" width="240" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Myy-1c-FTe"/>
