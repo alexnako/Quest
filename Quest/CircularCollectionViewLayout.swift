@@ -67,7 +67,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         super.prepareLayout()
         
         let centerX = collectionView!.contentOffset.x + (CGRectGetWidth(collectionView!.bounds) / 2.0)
-        itemSize.width = CGRectGetWidth(collectionView!.bounds) * 0.6
+        itemSize.width = CGRectGetWidth(collectionView!.bounds) * 0.7
         itemSize.height = CGRectGetHeight(collectionView!.bounds) * 0.6
         radius = itemSize.height * 2
         let anchorPointY = ((itemSize.height / 2.0) + radius) / itemSize.height

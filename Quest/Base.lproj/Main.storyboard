@@ -290,7 +290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dFT-RO-jqF">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="84" width="320" height="484"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="hb4-xy-Chq" customClass="CircularCollectionViewLayout" customModule="Quest" customModuleProvider="target"/>
@@ -309,7 +309,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-Zy-UyG">
-                                <rect key="frame" x="142" y="20" width="37" height="21"/>
+                                <rect key="frame" x="142.5" y="20" width="36.5" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Mh6-EJ-Xys"/>
@@ -366,7 +366,7 @@
                             <constraint firstItem="WtC-v2-QYN" firstAttribute="top" secondItem="dFT-RO-jqF" secondAttribute="bottom" id="Bc4-ei-6tT"/>
                             <constraint firstItem="dFT-RO-jqF" firstAttribute="centerX" secondItem="uIy-0c-Nzq" secondAttribute="centerX" id="Bt5-So-E6m"/>
                             <constraint firstItem="ed0-Zy-UyG" firstAttribute="centerX" secondItem="uIy-0c-Nzq" secondAttribute="centerX" id="Ics-xJ-nYk"/>
-                            <constraint firstItem="dFT-RO-jqF" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" id="Jdk-bf-eQE"/>
+                            <constraint firstItem="dFT-RO-jqF" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" constant="64" id="Jdk-bf-eQE"/>
                             <constraint firstItem="wuR-dQ-NFX" firstAttribute="leading" secondItem="uIy-0c-Nzq" secondAttribute="leading" constant="10" id="Na5-LB-mUa"/>
                             <constraint firstItem="P4M-Gk-oNF" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" constant="1" id="S3q-pC-HqS"/>
                             <constraint firstItem="ed0-Zy-UyG" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" id="WyW-k2-iri"/>
