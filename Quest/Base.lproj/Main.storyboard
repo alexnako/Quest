@@ -380,6 +380,9 @@
                                     <action selector="didPressLogout:" destination="obE-8Z-Ppf" eventType="touchUpInside" id="yx3-D6-VZU"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-1o-DDb">
+                                <rect key="frame" x="122" y="0.0" width="76" height="76"/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -417,6 +420,7 @@
                         <outlet property="collectionView" destination="dFT-RO-jqF" id="MFQ-YN-nSa"/>
                         <outlet property="logoutButton" destination="P4M-Gk-oNF" id="80C-U9-j2o"/>
                         <outlet property="newPlanButton" destination="wuR-dQ-NFX" id="GY7-OD-b8f"/>
+                        <outlet property="profilePictureView" destination="LHL-1o-DDb" id="Lxp-KH-kWa"/>
                         <outlet property="usernameLabel" destination="ed0-Zy-UyG" id="Tpv-jL-zxa"/>
                         <segue destination="oTh-7h-AXK" kind="presentation" identifier="readerSegue" id="Meh-d5-kIw"/>
                     </connections>

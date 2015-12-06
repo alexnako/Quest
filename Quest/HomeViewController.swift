@@ -8,14 +8,18 @@
 
 import UIKit
 import Parse
+import ParseUI
+import ParseFacebookUtilsV4
+import FBSDKCoreKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     @IBOutlet weak var totalPlansLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var newPlanButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var profilePictureView: UIImageView!
     
     let currentUser = PFUser.currentUser()
     let reuseIdentifier = "Cell"
@@ -23,6 +27,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var planToEdit: String!
     
     var colors = [UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 159/255, green: 0/255, blue: 255/255, alpha: 1.0)]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,32 +42,53 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         logoutButton.layer.cornerRadius = 4;
         logoutButton.layer.borderWidth = 1;
         logoutButton.layer.borderColor = UIColor.blackColor().CGColor
-
         
+        // Set profile image view roundded
+        self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
+        self.profilePictureView.clipsToBounds = true;
+        
+        // Display User Name or Profile Picture if from FB
+        if (PFFacebookUtils.isLinkedWithUser(self.currentUser!)) {
+            // User is from FB
+            self.usernameLabel.hidden = true
+            var accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+            let url = NSURL(string: "https://graph.facebook.com/me/picture?type=large&return_ssl_resources=1&access_token="+accessToken)
+            let urlRequest = NSURLRequest(URL: url!)
+            
+            NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+                
+                // Display the image
+                let image = UIImage(data: data!)
+                self.profilePictureView.image = image
+                
+            }
+        } else {
+            self.usernameLabel.hidden = false
+        }
         
         // LOADING USER NAME AND NUMBER OF PLANS
         usernameLabel.text = currentUser?.username
         fetchPans()
-
+        
         // REFRESHING LIST
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refresh", object: nil)
         // Register NIB
         collectionView!.registerNib(UINib(nibName: "CircularCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
     
-
+    
     // FETCHING NUMBER OF PLANS FROM USER
     func fetchPans() {
         
         let query = PFQuery(className:"Plan")
         query.whereKey("user", equalTo: (currentUser?.username)!)
-
+        
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -82,8 +108,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
-
-
+    
+    
     
     
     // LOGOUT
@@ -102,7 +128,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         numberOfItemsInSection section: Int) -> Int {
             return plans.count
     }
-
+    
     // Create Cell (Plan Cards)
     func collectionView(collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -111,7 +137,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.title = plans[indexPath.row]["title"] as? String ?? "No Title"
             let backgroundColor = colors[indexPath.row % colors.count]
             cell.contentView.backgroundColor = backgroundColor
-         return cell
+            return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -134,6 +160,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
-
+    
 }
 
