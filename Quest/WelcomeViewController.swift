@@ -23,6 +23,7 @@ class WelcomeViewController: VideoSplashViewController {
     var initialY: CGFloat!
     let offset: CGFloat = 135
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialY = iconView.frame.origin.y
@@ -35,8 +36,8 @@ class WelcomeViewController: VideoSplashViewController {
         // Notice that the startTime and duration need to be set based on actual video.
         self.startTime = 0
         self.duration = 9.64
-        self.alpha = 0.5
-        self.backgroundColor = UIColor.blackColor()
+        self.alpha = 0.8
+        self.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
         self.contentURL = url
         self.restartForeground = true
         
@@ -81,7 +82,7 @@ class WelcomeViewController: VideoSplashViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        UIView.animateWithDuration(2, delay: 0.0, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.6, delay: 0.0, options: .CurveEaseInOut, animations: {
             () -> Void in
             
             self.iconView.alpha = 1
@@ -89,9 +90,10 @@ class WelcomeViewController: VideoSplashViewController {
             self.login.alpha = 1
             self.facebookIcon.alpha = 1
             }, completion: { finished in
-                UIView.animateWithDuration(2.0, animations: {
+                UIView.animateWithDuration(1, animations: {
                    () -> Void in
-                    self.iconView.frame.origin.y -= self.view.frame.size.height * 0.33
+                    
+                    self.iconView.frame.origin.y = self.iconView.frame.origin.y - self.view.frame.size.height * 0.33
                 })
         })
        
