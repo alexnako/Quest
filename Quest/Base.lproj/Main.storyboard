@@ -333,8 +333,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-Zy-UyG">
-                                <rect key="frame" x="143" y="20" width="37" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-Zy-UyG">
+                                <rect key="frame" x="142" y="20" width="37" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Mh6-EJ-Xys"/>
@@ -381,8 +381,12 @@
                                     <action selector="didPressLogout:" destination="obE-8Z-Ppf" eventType="touchUpInside" id="yx3-D6-VZU"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-1o-DDb">
-                                <rect key="frame" x="122" y="0.0" width="76" height="76"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-1o-DDb">
+                                <rect key="frame" x="130" y="28" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="k1o-OS-0HX"/>
+                                    <constraint firstAttribute="height" constant="60" id="p3G-Rd-szk"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -396,7 +400,9 @@
                             <constraint firstItem="ed0-Zy-UyG" firstAttribute="centerX" secondItem="uIy-0c-Nzq" secondAttribute="centerX" id="Ics-xJ-nYk"/>
                             <constraint firstItem="dFT-RO-jqF" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" constant="64" id="Jdk-bf-eQE"/>
                             <constraint firstItem="wuR-dQ-NFX" firstAttribute="leading" secondItem="uIy-0c-Nzq" secondAttribute="leading" constant="10" id="Na5-LB-mUa"/>
+                            <constraint firstItem="LHL-1o-DDb" firstAttribute="centerX" secondItem="uIy-0c-Nzq" secondAttribute="centerX" id="Q9c-Ue-avy"/>
                             <constraint firstItem="P4M-Gk-oNF" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" constant="1" id="S3q-pC-HqS"/>
+                            <constraint firstItem="LHL-1o-DDb" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" constant="8" id="S5y-c9-NmD"/>
                             <constraint firstItem="ed0-Zy-UyG" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" id="WyW-k2-iri"/>
                             <constraint firstItem="dFT-RO-jqF" firstAttribute="leading" secondItem="uIy-0c-Nzq" secondAttribute="leading" id="Y9a-HN-1lQ"/>
                             <constraint firstItem="dFT-RO-jqF" firstAttribute="leading" secondItem="uIy-0c-Nzq" secondAttribute="leading" id="boN-mG-W2b"/>
