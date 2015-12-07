@@ -288,7 +288,7 @@
                         <outlet property="createAccountButton" destination="aNK-Ij-uQx" id="I9e-Cx-npa"/>
                         <outlet property="passwordField" destination="P74-3J-IIG" id="Gw0-s2-1Xo"/>
                         <outlet property="userNameField" destination="jKk-bU-DCJ" id="CRh-Ba-JCB"/>
-                        <segue destination="obE-8Z-Ppf" kind="presentation" identifier="createAccountSegue" animates="NO" id="bK4-vR-9mX"/>
+                        <segue destination="obE-8Z-Ppf" kind="presentation" identifier="createAccount2Segue" animates="NO" id="bK4-vR-9mX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sX8-2L-tfc" userLabel="First Responder" sceneMemberID="firstResponder"/>

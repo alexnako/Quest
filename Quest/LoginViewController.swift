@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    var fadeTransition: FadeTransition!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +64,11 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 2;
         loginButton.layer.borderWidth = 2;
         loginButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        //fade transition
+        fadeTransition = FadeTransition ()
+        fadeTransition.duration = 0.8
+        
         
         // change status bar to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -140,4 +147,11 @@ class LoginViewController: UIViewController {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
     }
+    
+    //Transition to Login
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+            let destinationViewController = segue.destinationViewController as! HomeViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = fadeTransition
+        }
 }

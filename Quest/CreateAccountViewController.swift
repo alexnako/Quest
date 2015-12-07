@@ -13,6 +13,9 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
+    var fadeTransition: FadeTransition!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //auto pop-up keyboard
@@ -58,6 +61,10 @@ class CreateAccountViewController: UIViewController {
         createAccountButton.layer.borderWidth = 2;
         createAccountButton.layer.borderColor = UIColor.whiteColor().CGColor
         
+        //fade transition
+        fadeTransition = FadeTransition ()
+        
+        fadeTransition.duration = 0.8
         // change status bar to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
@@ -147,6 +154,12 @@ class CreateAccountViewController: UIViewController {
         super.viewWillDisappear(animated)
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
+    }
+    //Transition to Login
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let destinationViewController = segue.destinationViewController as! HomeViewController
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = fadeTransition
     }
     
 }
