@@ -75,6 +75,13 @@ class CreateAccountViewController: UIViewController {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         super.viewWillAppear(animated)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        // change status bar to white
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        super.viewDidAppear(animated)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
