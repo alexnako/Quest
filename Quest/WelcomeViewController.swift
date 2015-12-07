@@ -22,6 +22,7 @@ class WelcomeViewController: VideoSplashViewController {
     @IBOutlet weak var facebookIcon: UIImageView!
     @IBOutlet weak var facebookLoginButton: UIButton!
     
+    @IBOutlet weak var taglineText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class WelcomeViewController: VideoSplashViewController {
         login.alpha = 0
         facebookIcon.alpha = 0
         facebookLoginButton.alpha = 0
+        taglineText.alpha = 0
         // change status bar to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         super.viewWillAppear(animated)
@@ -69,10 +71,14 @@ class WelcomeViewController: VideoSplashViewController {
             self.facebookIcon.alpha = 1
             self.facebookLoginButton.alpha = 1
             }, completion: { finished in
-                UIView.animateWithDuration(0.6, delay: 0.4, options: .CurveEaseOut, animations:  {
+                UIView.animateWithDuration(0.5, delay: 0.4, options: .CurveEaseOut, animations:  {
                     
                     self.iconView.frame.origin.y -= self.view.frame.size.height * 0.33
-                    }, completion: { (finished) -> Void in }
+                    }, completion: { finished2 in  UIView.animateWithDuration(0.6, animations:  {
+                        
+                        self.taglineText.alpha = 1
+                        })
+                    }
                 )
         })
         

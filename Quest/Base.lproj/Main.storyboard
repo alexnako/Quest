@@ -57,14 +57,14 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="app-facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Qpx-zU-OZt">
                                 <rect key="frame" x="78" y="443" width="16" height="16"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-Uf-S9E">
-                                <rect key="frame" x="91" y="260" width="128" height="47"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-Uf-S9E">
+                                <rect key="frame" x="77" y="260" width="166" height="47"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="iconwelcomescreen" translatesAutoresizingMaskIntoConstraints="NO" id="Wgi-ga-a45">
-                                        <rect key="frame" x="15" y="8" width="32" height="32"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iconwelcomescreen" translatesAutoresizingMaskIntoConstraints="NO" id="Wgi-ga-a45">
+                                        <rect key="frame" x="15" y="8" width="40" height="32"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7z-Gu-8b6">
-                                        <rect key="frame" x="60" y="13" width="52" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7z-Gu-8b6">
+                                        <rect key="frame" x="68" y="6" width="82" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,6 +90,16 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your day planner, inspired by the world around you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHJ-eh-zv1">
+                                <rect key="frame" x="60" y="140" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Uye-cY-tSq"/>
+                                    <constraint firstAttribute="height" constant="40" id="fNC-mX-8pK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,7 +115,9 @@
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="14" id="Uty-6Z-tDk"/>
                             <constraint firstItem="zIk-Uf-S9E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VYX-WM-GTM"/>
                             <constraint firstItem="V5t-n1-Kod" firstAttribute="top" secondItem="ECf-FV-zIv" secondAttribute="bottom" constant="16" id="ZHH-cA-JDm"/>
+                            <constraint firstItem="FHJ-eh-zv1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zk7-ra-xYt"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fgN-DG-5fb"/>
+                            <constraint firstItem="FHJ-eh-zv1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="fxb-43-1Zv"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="gky-Ze-GPu"/>
                             <constraint firstItem="8VP-HR-F83" firstAttribute="top" secondItem="Qpx-zU-OZt" secondAttribute="bottom" constant="8" symbolic="YES" id="mXP-fo-3os"/>
                             <constraint firstItem="zIk-Uf-S9E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nPu-9j-yK5"/>
@@ -131,6 +143,7 @@
                         <outlet property="facebookLoginButton" destination="V5t-n1-Kod" id="rLb-Mc-TKM"/>
                         <outlet property="iconView" destination="zIk-Uf-S9E" id="YAc-Cn-Exd"/>
                         <outlet property="login" destination="ECf-FV-zIv" id="q6N-QD-U51"/>
+                        <outlet property="taglineText" destination="FHJ-eh-zv1" id="YNi-AU-3kH"/>
                         <segue destination="obE-8Z-Ppf" kind="presentation" identifier="facebookLoginSegue" animates="NO" id="An1-wP-O1H"/>
                     </connections>
                 </viewController>
