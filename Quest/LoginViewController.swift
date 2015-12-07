@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         //userNameField.becomeFirstResponder()
         
         
-        
+        //Add blur effect background
         let backgroundImageView = UIImageView(image: UIImage(named: "loginbackground"))
         backgroundImageView.frame = view.bounds
         backgroundImageView.contentMode = .ScaleAspectFill
