@@ -334,7 +334,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-Zy-UyG">
-                                <rect key="frame" x="145" y="30" width="31" height="21"/>
+                                <rect key="frame" x="145" y="42" width="31" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Mh6-EJ-Xys"/>
@@ -406,6 +406,7 @@
                             <constraint firstItem="dFT-RO-jqF" firstAttribute="leading" secondItem="uIy-0c-Nzq" secondAttribute="leading" id="Y9a-HN-1lQ"/>
                             <constraint firstItem="dFT-RO-jqF" firstAttribute="leading" secondItem="uIy-0c-Nzq" secondAttribute="leading" id="boN-mG-W2b"/>
                             <constraint firstAttribute="trailing" secondItem="dFT-RO-jqF" secondAttribute="trailing" id="cMe-bd-K7j"/>
+                            <constraint firstItem="ed0-Zy-UyG" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" constant="22" id="hrG-iv-4EK"/>
                             <constraint firstAttribute="trailing" secondItem="dFT-RO-jqF" secondAttribute="trailing" id="j2j-FR-b07"/>
                             <constraint firstItem="P4M-Gk-oNF" firstAttribute="top" secondItem="9qZ-bd-VqR" secondAttribute="bottom" constant="10" id="k2b-Ga-ZHr"/>
                             <constraint firstAttribute="trailing" secondItem="dFT-RO-jqF" secondAttribute="trailing" id="kv8-Kx-nh9"/>
@@ -417,6 +418,7 @@
                                 <exclude reference="Bt5-So-E6m"/>
                                 <exclude reference="cMe-bd-K7j"/>
                                 <exclude reference="8Uc-Nj-GEM"/>
+                                <exclude reference="WyW-k2-iri"/>
                                 <exclude reference="k2b-Ga-ZHr"/>
                             </mask>
                         </variation>
