@@ -134,7 +134,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     // SEARCH FOR TAGS
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        var svc = segue!.destinationViewController as! ComposerViewController;
+        var svc = segue!.destinationViewController as! ComposerTableViewController;
         svc.photosSelected = photosSelected
     }
 
