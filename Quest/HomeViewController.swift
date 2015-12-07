@@ -26,8 +26,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var planToEdit: String!
     var scaleTransition: ScaleTransition!
     
-    //Card colors
-    var colors = [UIColor(red: 1/255, green: 213/255, blue: 216/255, alpha: 1.0), UIColor(red: 0/255, green: 182/255, blue: 247/255, alpha: 1.0), UIColor(red: 252/255, green: 209/255, blue: 65/255, alpha: 1.0), UIColor(red: 249/255, green: 77/255, blue: 99/255, alpha: 1.0), UIColor(red: 126/255, green: 84/255, blue: 201/255, alpha: 1.0)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,9 +65,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // REFRESHING LIST
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refresh", object: nil)
+        
         // Register NIB
         collectionView!.registerNib(UINib(nibName: "CircularCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
+    
     override func viewWillAppear(animated: Bool) {
         
         // change status bar to white
@@ -89,6 +89,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let query = PFQuery(className:"Plan")
         query.whereKey("user", equalTo: (currentUser?.username)!)
+        query.orderByDescending("createdAt")
         
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
@@ -136,8 +137,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
             
             cell.title = plans[indexPath.row]["title"] as? String ?? "No Title"
-            let backgroundColor = colors[indexPath.row % colors.count]
-            cell.contentView.backgroundColor = backgroundColor
+            var color = plans[indexPath.row]["color"] as? String
+            var colorIndex = Int(color!)
+            cell.contentView.backgroundColor = colorSet[colorIndex!]
             return cell
     }
     
@@ -154,7 +156,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if (segue.identifier == "readerSegue") {
             
             // initialize new view controller and cast it as your view controller
-            let viewController = segue.destinationViewController as! ReaderViewController
+            let viewController = segue.destinationViewController as! ReaderTableViewController
             // your new view controller should have property that will store passed value
             viewController.passedValue = planToEdit
             //Scaletransition to reader
