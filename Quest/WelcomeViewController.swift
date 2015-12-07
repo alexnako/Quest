@@ -86,7 +86,7 @@ class WelcomeViewController: VideoSplashViewController {
                     }, completion: { finished2 in  UIView.animateWithDuration(0.6, animations:  {
                         
                         self.taglineText.alpha = 1
-                        })
+                    })
                     }
                 )
         })
@@ -123,10 +123,18 @@ class WelcomeViewController: VideoSplashViewController {
     }
     
     //Transition to Login
-   override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        let destinationViewController = segue.destinationViewController as! LoginViewController
-        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        destinationViewController.transitioningDelegate = fadeTransition
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if segue.identifier == "loginSegue" {
+            
+            let destinationViewController = segue.destinationViewController as! LoginViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = fadeTransition
+        } else if segue.identifier == "createAccountSegue" {
+            let destinationViewController = segue.destinationViewController as! CreateAccountViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = fadeTransition
+        }
+        
     }
 }
