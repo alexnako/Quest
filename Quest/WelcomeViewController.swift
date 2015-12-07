@@ -59,6 +59,7 @@ class WelcomeViewController: VideoSplashViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         iconView.alpha = 0
         createAccountButton.alpha = 0
         login.alpha = 0
@@ -67,11 +68,12 @@ class WelcomeViewController: VideoSplashViewController {
         taglineText.alpha = 0
         // change status bar to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        super.viewWillAppear(animated)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         // change status bar to white
+        super.viewDidAppear(animated)
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UIView.animateWithDuration(1.4, delay: 0.0, options: .CurveEaseOut, animations: {
             () -> Void in
@@ -92,7 +94,7 @@ class WelcomeViewController: VideoSplashViewController {
                     }
                 )
         })
-        super.viewDidAppear(animated)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,11 +120,11 @@ class WelcomeViewController: VideoSplashViewController {
         }
     }
     
-    /*override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool) {
         
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         super.viewWillDisappear(animated)
-    }*/
+    }
     
     //Transition to Login
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

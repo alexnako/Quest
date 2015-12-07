@@ -165,7 +165,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
     }
     
