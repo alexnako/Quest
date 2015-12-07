@@ -150,8 +150,14 @@ class LoginViewController: UIViewController {
     
     //Transition to Login
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "loginSegue" {
             let destinationViewController = segue.destinationViewController as! HomeViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = fadeTransition
+        } else if segue.identifier == "resetPasswordSegue" {
+            let destinationViewController = segue.destinationViewController as! ResetPasswordViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = fadeTransition
+        }
         }
 }
