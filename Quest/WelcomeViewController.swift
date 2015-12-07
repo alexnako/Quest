@@ -26,7 +26,7 @@ class WelcomeViewController: VideoSplashViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("video-1448868014", ofType: "mp4")!)
+        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("splashvideo3", ofType: "mp4")!)
         
         self.videoFrame = view.frame
         self.fillMode = .ResizeAspectFill
@@ -35,7 +35,7 @@ class WelcomeViewController: VideoSplashViewController {
         // Notice that the startTime and duration need to be set based on actual video.
         self.startTime = 0
         self.duration = 9.64
-        self.alpha = 0.4
+        self.alpha = 0.6
         self.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
         self.contentURL = url
         self.restartForeground = true
