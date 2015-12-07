@@ -118,7 +118,7 @@ class LoginViewController: UIViewController {
             if error == nil {
                 self.userNameField.text = ""
                 self.passwordField.text = ""
-                self.performSegueWithIdentifier("logInSegue", sender: self)
+                self.performSegueWithIdentifier("logIn2Segue", sender: self)
             } else {
                 let alertController = UIAlertController(title: self.getErrorTitle(error!), message:
                     self.getErrorMessage(error!), preferredStyle: UIAlertControllerStyle.Alert)

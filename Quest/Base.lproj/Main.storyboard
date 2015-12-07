@@ -446,7 +446,7 @@
                         <outlet property="loginButton" destination="fo4-D4-CQN" id="nSJ-Iq-eA2"/>
                         <outlet property="passwordField" destination="wbL-wD-3xa" id="H1I-LH-WOt"/>
                         <outlet property="userNameField" destination="hBp-I5-x0z" id="IWQ-ek-UCS"/>
-                        <segue destination="obE-8Z-Ppf" kind="presentation" identifier="logInSegue" animates="NO" id="snS-mD-z6c"/>
+                        <segue destination="obE-8Z-Ppf" kind="presentation" identifier="logIn2Segue" animates="NO" id="snS-mD-z6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSL-Di-n2r" userLabel="First Responder" sceneMemberID="firstResponder"/>

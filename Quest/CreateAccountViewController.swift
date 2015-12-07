@@ -127,7 +127,7 @@ class CreateAccountViewController: UIViewController {
             (succeeded: Bool, error: NSError?) -> Void in
             if (succeeded) {
                 // Successfully created account
-                self.performSegueWithIdentifier("createAccountSegue", sender: self)
+                self.performSegueWithIdentifier("createAccount2Segue", sender: self)
             } else {
                 
                 // Parse.com returns error
