@@ -133,14 +133,17 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     // SEARCH FOR TAGS
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        var svc = segue!.destinationViewController as! ComposerTableViewController;
-        svc.photosSelected = photosSelected
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if parentViewController is ComposerTableViewController {
+            let initialSearch = segue.destinationViewController as! ComposerTableViewController;
+            initialSearch.photosSelected = photosSelected
+        } else if parentViewController is ReaderTableViewController {
+            let editSearch = segue.destinationViewController as! ReaderTableViewController;
+            editSearch.photosSelected = photosSelected
+        
+        }
     }
-
-    
-    
-    
 
     
 }

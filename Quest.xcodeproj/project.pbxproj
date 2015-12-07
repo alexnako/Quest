@@ -12,6 +12,7 @@
 		22016AB51C154C490053EFD6 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016AB41C154C490053EFD6 /* TagCell.swift */; };
 		22016AB71C154C510053EFD6 /* BodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016AB61C154C510053EFD6 /* BodyCell.swift */; };
 		22016AB91C154C5C0053EFD6 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016AB81C154C5C0053EFD6 /* ImageCell.swift */; };
+		22016ABB1C1632CD0053EFD6 /* ReaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016ABA1C1632CD0053EFD6 /* ReaderTableViewController.swift */; };
 		221E0EB51C04BD9800EB379C /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E0EB41C04BD9800EB379C /* ReaderViewController.swift */; };
 		2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008D1BFE6EAD00A460DE /* AppDelegate.swift */; };
 		224200901BFE6EAD00A460DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008F1BFE6EAD00A460DE /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 		22016AB41C154C490053EFD6 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		22016AB61C154C510053EFD6 /* BodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCell.swift; sourceTree = "<group>"; };
 		22016AB81C154C5C0053EFD6 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		22016ABA1C1632CD0053EFD6 /* ReaderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTableViewController.swift; sourceTree = "<group>"; };
 		221E0EB41C04BD9800EB379C /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		2242008A1BFE6EAD00A460DE /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2242008D1BFE6EAD00A460DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,7 +154,9 @@
 				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
 				2242008F1BFE6EAD00A460DE /* ViewController.swift */,
 				224200911BFE6EAD00A460DE /* Main.storyboard */,
+				22016ABA1C1632CD0053EFD6 /* ReaderTableViewController.swift */,
 				22016AB01C1549050053EFD6 /* ComposerTableViewController.swift */,
+				224200C71BFE6FD200A460DE /* SearchViewController.swift */,
 				22016AB21C154C3B0053EFD6 /* TitleCell.swift */,
 				22016AB41C154C490053EFD6 /* TagCell.swift */,
 				22016AB61C154C510053EFD6 /* BodyCell.swift */,
@@ -161,7 +165,6 @@
 				221E0EB41C04BD9800EB379C /* ReaderViewController.swift */,
 				224200C51BFE6FC700A460DE /* ComposerViewController.swift */,
 				224200C91BFE702900A460DE /* CameraViewController.swift */,
-				224200C71BFE6FD200A460DE /* SearchViewController.swift */,
 				224200C11BFE6FA700A460DE /* ResetPasswordViewController.swift */,
 				224200BF1BFE6F9800A460DE /* LoginViewController.swift */,
 				224200BD1BFE6F8C00A460DE /* CreateAccountViewController.swift */,
@@ -419,6 +422,7 @@
 				9966E7A11C092C5100332513 /* CircularCollectionViewLayout.swift in Sources */,
 				2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */,
 				9966E7A81C09359F00332513 /* CircularCollectionViewCell.swift in Sources */,
+				22016ABB1C1632CD0053EFD6 /* ReaderTableViewController.swift in Sources */,
 				22CF53371C0387AC00084207 /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
