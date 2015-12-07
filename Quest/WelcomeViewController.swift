@@ -21,8 +21,11 @@ class WelcomeViewController: VideoSplashViewController {
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var facebookIcon: UIImageView!
     @IBOutlet weak var facebookLoginButton: UIButton!
-    
     @IBOutlet weak var taglineText: UILabel!
+    
+    var fadeTransition: FadeTransition!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,12 @@ class WelcomeViewController: VideoSplashViewController {
         createAccountButton.layer.cornerRadius = 2;
         createAccountButton.layer.borderWidth = 2;
         createAccountButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        fadeTransition = FadeTransition ()
+        fadeTransition.duration = 0.8
+        // change status bar to white
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         
         // Do any additional setup after loading the view.
     }
@@ -108,9 +117,16 @@ class WelcomeViewController: VideoSplashViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        super.viewWillDisappear(animated)
     }
     
+    //Transition to Login
+   override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        let destinationViewController = segue.destinationViewController as! LoginViewController
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = fadeTransition
+
+    }
 }
