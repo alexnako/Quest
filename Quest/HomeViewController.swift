@@ -17,6 +17,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBAction func testIndex(sender: AnyObject) {
+//        self.collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: 3, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Top, animated: false)
+//        
+//        self.collectionView.setContentOffset(CGPoint(x: 213, y: 0), animated: true)
+        print("test index")
+        
+    }
     let currentUser = PFUser.currentUser()
     let reuseIdentifier = "Cell"
     var plans: [PFObject]!
@@ -29,6 +36,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         plans = []
+        
+        //collectionView.contentOffset.x = 213.5
         
         
         newPlanButton.layer.cornerRadius = 4;
@@ -48,8 +57,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refresh", object: nil)
         // Register NIB
         collectionView!.registerNib(UINib(nibName: "CircularCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+    
+        
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -71,7 +86,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 self.plans = objects
                 // Reload cards
+                
+                self.collectionView.setContentOffset(CGPoint(x: 213.5, y: 0), animated: false)
+                
                 self.collectionView.reloadData()
+                
                 
             } else {
                 // Log details of the failure
@@ -100,23 +119,38 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
-            return plans.count
+            return plans.count + 1
     }
 
     // Create Cell (Plan Cards)
     func collectionView(collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
             
-            cell.title = plans[indexPath.row]["title"] as? String ?? "No Title"
-            let backgroundColor = colors[indexPath.row % colors.count]
-            cell.contentView.backgroundColor = backgroundColor
-         return cell
+            if (indexPath.row == 0) {
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
+                cell.title = "Create New"
+                let backgroundColor = colors[indexPath.row % colors.count]
+                cell.contentView.backgroundColor = backgroundColor
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CircularCollectionViewCell
+                
+                cell.title = plans[indexPath.row-1]["title"] as? String ?? "No Title"
+                let backgroundColor = colors[indexPath.row % colors.count]
+                cell.contentView.backgroundColor = backgroundColor
+                return cell
+            }
+//            
+//            if collectionView.contentOffset < 118 {
+//                print("yes")
+//            }
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         planToEdit = plans[indexPath.row].objectId!
+        print("indexpath \(indexPath.row)")
+        
         performSegueWithIdentifier("readerSegue", sender: self)
     }
     
@@ -133,6 +167,29 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
+    
+    func scrollViewDidScroll(collectionView: UIScrollView) {
+        let cell = self.collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? CircularCollectionViewCell
+        
+        let cellAlpha = convertValue(collectionView.contentOffset.x, r1Min: 200, r1Max: 118, r2Min: 0, r2Max: 1)
+        
+        cell!.contentView.alpha = cellAlpha
+
+
+//        print(cell!.title)
+//        print("yes")
+//        print(collectionView.contentOffset.x)
+        
+        if collectionView.contentOffset.x < 118 {
+            print ("create new")
+            performSegueWithIdentifier("composerSegue", sender: self)
+            
+            
+        }
+    }
+    
+    
+    
     
 
 }

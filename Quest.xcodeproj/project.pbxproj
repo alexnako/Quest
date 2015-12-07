@@ -26,6 +26,7 @@
 		22B382F11BFFF4B600AD7A4D /* PlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B382F01BFFF4B600AD7A4D /* PlanCell.swift */; };
 		22CF53371C0387AC00084207 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF53361C0387AC00084207 /* PhotoViewCell.swift */; };
 		22CF533B1C03920500084207 /* CollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF533A1C03920500084207 /* CollViewCell.swift */; };
+		4656E19C1C1100D300FA0D20 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656E19B1C1100D300FA0D20 /* Common.swift */; };
 		9966E7A11C092C5100332513 /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966E7A01C092C5100332513 /* CircularCollectionViewLayout.swift */; };
 		9966E7A81C09359F00332513 /* CircularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966E7A61C09359F00332513 /* CircularCollectionViewCell.swift */; };
 		9966E7A91C09359F00332513 /* CircularCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9966E7A71C09359F00332513 /* CircularCollectionViewCell.xib */; };
@@ -76,6 +77,7 @@
 		22B382F01BFFF4B600AD7A4D /* PlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCell.swift; sourceTree = "<group>"; };
 		22CF53361C0387AC00084207 /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewCell.swift; path = ../PhotoViewCell.swift; sourceTree = "<group>"; };
 		22CF533A1C03920500084207 /* CollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollViewCell.swift; sourceTree = "<group>"; };
+		4656E19B1C1100D300FA0D20 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		9966E7A01C092C5100332513 /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9966E7A61C09359F00332513 /* CircularCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewCell.swift; sourceTree = "<group>"; };
 		9966E7A71C09359F00332513 /* CircularCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9966E7AA1C0C31D800332513 /* video-1448868014.mp4 */,
+				4656E19B1C1100D300FA0D20 /* Common.swift */,
 				22CF53361C0387AC00084207 /* PhotoViewCell.swift */,
 				22B382F01BFFF4B600AD7A4D /* PlanCell.swift */,
 				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
@@ -384,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4656E19C1C1100D300FA0D20 /* Common.swift in Sources */,
 				224200BE1BFE6F8C00A460DE /* CreateAccountViewController.swift in Sources */,
 				224200CA1BFE702900A460DE /* CameraViewController.swift in Sources */,
 				224200BC1BFE6F7700A460DE /* WelcomeViewController.swift in Sources */,
