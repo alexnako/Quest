@@ -63,8 +63,8 @@ class CreateAccountViewController: UIViewController {
         
         //fade transition
         fadeTransition = FadeTransition ()
-        
         fadeTransition.duration = 0.8
+        
         // change status bar to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         

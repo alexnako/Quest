@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let reuseIdentifier = "Cell"
     var plans: [PFObject]!
     var planToEdit: String!
+    var scaleTransition: ScaleTransition!
     
     //Card colors
     var colors = [UIColor(red: 1/255, green: 213/255, blue: 216/255, alpha: 1.0), UIColor(red: 0/255, green: 182/255, blue: 247/255, alpha: 1.0), UIColor(red: 252/255, green: 209/255, blue: 65/255, alpha: 1.0), UIColor(red: 249/255, green: 77/255, blue: 99/255, alpha: 1.0), UIColor(red: 126/255, green: 84/255, blue: 201/255, alpha: 1.0)]
@@ -33,7 +34,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         plans = []
-        
+        //fade transition
+        scaleTransition = ScaleTransition ()
+        scaleTransition.duration = 0.8
         
         // Set profile image view roundded
         self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
@@ -154,6 +157,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let viewController = segue.destinationViewController as! ReaderViewController
             // your new view controller should have property that will store passed value
             viewController.passedValue = planToEdit
+            //Scaletransition to reader
+            viewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            viewController.transitioningDelegate = scaleTransition
         }
         
     }
