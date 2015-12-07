@@ -13,9 +13,9 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpB-ww-2Ep">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpB-ww-2Ep">
                         <rect key="frame" x="8" y="24" width="81" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -23,9 +23,9 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="xpB-ww-2Ep" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="14Q-RZ-G55"/>
+                <constraint firstItem="xpB-ww-2Ep" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="14Q-RZ-G55"/>
                 <constraint firstAttribute="trailing" secondItem="xpB-ww-2Ep" secondAttribute="trailing" constant="8" id="g6X-LW-QpL"/>
-                <constraint firstItem="xpB-ww-2Ep" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="hpn-Mt-hXq"/>
+                <constraint firstItem="xpB-ww-2Ep" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="88" id="hpn-Mt-hXq"/>
             </constraints>
             <size key="customSize" width="97" height="144"/>
             <connections>

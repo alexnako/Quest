@@ -25,8 +25,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var plans: [PFObject]!
     var planToEdit: String!
     
-    var colors = [UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1.0), UIColor(red: 159/255, green: 0/255, blue: 255/255, alpha: 1.0)]
-    
+    /*var colors = [UIColor(red: 126/255, green: 84/255, blue: 201/255, alpha: 1.0), UIColor(red: 36/255, green: 195/255, blue: 221/255, alpha: 1.0), UIColor(red: 237/255, green: 65/255, blue: 89/255, alpha: 1.0), UIColor(red: 3/255, green: 172/255, blue: 253/255, alpha: 1.0), UIColor(red: 42/255, green: 120/255, blue: 254/255, alpha: 1.0), UIColor(red: 252/255, green: 209/255, blue: 65/255, alpha: 1.0)]*/
+    /*var colors = [UIColor(red: 238/255, green: 182/255, blue: 67/255, alpha: 1.0), UIColor(red: 230/255, green: 160/255, blue: 65/255, alpha: 1.0), UIColor(red: 218/255, green: 121/255, blue: 60/255, alpha: 1.0), UIColor(red: 111/255, green: 103/255, blue: 190/255, alpha: 1.0), UIColor(red: 91/255, green: 86/255, blue: 167/255, alpha: 1.0), UIColor(red: 65/255, green: 64/255, blue: 144/255, alpha: 1.0)]*/
+    var colors = [UIColor(red: 1/255, green: 213/255, blue: 216/255, alpha: 1.0), UIColor(red: 0/255, green: 182/255, blue: 247/255, alpha: 1.0), UIColor(red: 252/255, green: 209/255, blue: 65/255, alpha: 1.0), UIColor(red: 249/255, green: 77/255, blue: 99/255, alpha: 1.0), UIColor(red: 126/255, green: 84/255, blue: 201/255, alpha: 1.0)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //logoutButton.layer.cornerRadius = 4;
         //logoutButton.layer.borderWidth = 1;
         //logoutButton.layer.borderColor = UIColor.blackColor().CGColor
-        profilePictureView.layer.borderWidth = 1
-        profilePictureView.layer.borderColor = UIColor.darkGrayColor().CGColor
+        //profilePictureView.layer.borderWidth = 1
+        //profilePictureView.layer.borderColor = UIColor.darkGrayColor().CGColor
         
         // Set profile image view roundded
         self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
