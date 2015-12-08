@@ -10,9 +10,7 @@
 import UIKit
 
 class CircularCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var planTitle: UILabel!
-    
     var title: String = "" {
         didSet {
             // Change the plan title in label
@@ -22,7 +20,6 @@ class CircularCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         // Initialization code
     }
     

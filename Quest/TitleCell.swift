@@ -30,7 +30,7 @@ class TitleCell: UITableViewCell, UITextViewDelegate {
         titlePlanField.sizeToFit()
         titlePlanField.layoutIfNeeded()
         titleHeight = titlePlanField.sizeThatFits(CGSizeMake(titlePlanField.frame.size.width, CGFloat.max)).height
-        if titleHeight > 88 {
+        if titleHeight > 60 {
             titleFieldHeight.constant = titleHeight
         }
         tableView?.beginUpdates()
