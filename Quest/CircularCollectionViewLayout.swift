@@ -31,6 +31,7 @@ class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
 
 class CircularCollectionViewLayout: UICollectionViewLayout {
     // Default size
+    
     var itemSize = CGSize(width: 240, height: 320)
     
     var angleAtExtreme: CGFloat {
@@ -67,10 +68,10 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         super.prepareLayout()
         
         let centerX = collectionView!.contentOffset.x + (CGRectGetWidth(collectionView!.bounds) / 2.0)
-        itemSize.width = CGRectGetWidth(collectionView!.bounds) * 0.7
-        itemSize.height = CGRectGetHeight(collectionView!.bounds) * 0.66
+        itemSize.width = CGRectGetWidth(collectionView!.bounds) * 0.8
+        itemSize.height = CGRectGetHeight(collectionView!.bounds) * 0.8
         radius = itemSize.height * 2
-        let anchorPointY = ((itemSize.height / 2.0) + radius) / itemSize.height
+        let anchorPointY = ((itemSize.height / 5) + radius) / itemSize.height
         attributesList = (0..<collectionView!.numberOfItemsInSection(0)).map { (i)
             -> CircularCollectionViewLayoutAttributes in
             // 1 Create an instance of CircularCollectionViewLayoutAttributes for each index path, and then set its size.

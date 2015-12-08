@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -8,30 +8,39 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="CircularCollectionViewCell" customModule="Quest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
+            <rect key="frame" x="0.0" y="0.0" width="129" height="180"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
+                <rect key="frame" x="0.0" y="0.0" width="129" height="180"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpB-ww-2Ep">
-                        <rect key="frame" x="8" y="24" width="81" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="spatial" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpB-ww-2Ep">
+                        <rect key="frame" x="8" y="51" width="113" height="42"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
             <constraints>
-                <constraint firstItem="xpB-ww-2Ep" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="14Q-RZ-G55"/>
+                <constraint firstItem="xpB-ww-2Ep" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="14Q-RZ-G55"/>
+                <constraint firstAttribute="bottom" secondItem="xpB-ww-2Ep" secondAttribute="bottom" constant="10" id="PIR-yf-6BA"/>
                 <constraint firstAttribute="trailing" secondItem="xpB-ww-2Ep" secondAttribute="trailing" constant="8" id="g6X-LW-QpL"/>
-                <constraint firstItem="xpB-ww-2Ep" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="88" id="hpn-Mt-hXq"/>
+                <constraint firstItem="xpB-ww-2Ep" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="51" id="hpn-Mt-hXq"/>
             </constraints>
-            <size key="customSize" width="97" height="144"/>
+            <size key="customSize" width="126" height="144"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="PIR-yf-6BA"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="planTitle" destination="xpB-ww-2Ep" id="Y6a-1h-FHX"/>
             </connections>
-            <point key="canvasLocation" x="389.5" y="439"/>
+            <point key="canvasLocation" x="403.5" y="439"/>
         </collectionViewCell>
     </objects>
 </document>

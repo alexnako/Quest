@@ -24,10 +24,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let reuseIdentifier = "Cell"
     var plans: [PFObject]!
     var planToEdit: String!
+    var planToEditColor: UIColor!
+    var planToEditTitle: String!
     var scaleTransition: ScaleTransition!
+    var expandTransition: ExpandTransition!
     
+    @IBOutlet weak var selectedCard: UIView!
+    @IBOutlet weak var selectedCardTitle: UITextView!
     
     override func viewDidLoad() {
+        selectedCard.hidden = true
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -35,6 +41,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //fade transition
         scaleTransition = ScaleTransition ()
         scaleTransition.duration = 0.8
+        
+        expandTransition = ExpandTransition()
         
         // Set profile image view roundded
         self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
@@ -146,6 +154,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         planToEdit = plans[indexPath.row].objectId!
+        planToEditTitle = plans[indexPath.row]["title"] as? String
+        var color = plans[indexPath.row]["color"] as? String
+        var colorIndex = Int(color!)
+        planToEditColor = colorSet[colorIndex!]
         performSegueWithIdentifier("readerSegue", sender: self)
     }
     
@@ -155,13 +167,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if (segue.identifier == "readerSegue") {
             
+            
             // initialize new view controller and cast it as your view controller
             let viewController = segue.destinationViewController as! ReaderTableViewController
+            
+            //calling custom transition
+            
             // your new view controller should have property that will store passed value
             viewController.passedValue = planToEdit
             //Scaletransition to reader
             viewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-            viewController.transitioningDelegate = scaleTransition
+            viewController.transitioningDelegate = expandTransition
         }
         
     }
