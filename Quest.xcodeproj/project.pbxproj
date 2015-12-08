@@ -13,6 +13,7 @@
 		22016AB71C154C510053EFD6 /* BodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016AB61C154C510053EFD6 /* BodyCell.swift */; };
 		22016AB91C154C5C0053EFD6 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016AB81C154C5C0053EFD6 /* ImageCell.swift */; };
 		22016ABB1C1632CD0053EFD6 /* ReaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016ABA1C1632CD0053EFD6 /* ReaderTableViewController.swift */; };
+		22016AFC1C1652C40053EFD6 /* ExpandTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22016AFB1C1652C40053EFD6 /* ExpandTransition.swift */; };
 		221E0EB51C04BD9800EB379C /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E0EB41C04BD9800EB379C /* ReaderViewController.swift */; };
 		2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008D1BFE6EAD00A460DE /* AppDelegate.swift */; };
 		224200901BFE6EAD00A460DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242008F1BFE6EAD00A460DE /* ViewController.swift */; };
@@ -66,6 +67,7 @@
 		22016AB61C154C510053EFD6 /* BodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCell.swift; sourceTree = "<group>"; };
 		22016AB81C154C5C0053EFD6 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		22016ABA1C1632CD0053EFD6 /* ReaderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTableViewController.swift; sourceTree = "<group>"; };
+		22016AFB1C1652C40053EFD6 /* ExpandTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTransition.swift; sourceTree = "<group>"; };
 		221E0EB41C04BD9800EB379C /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		2242008A1BFE6EAD00A460DE /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2242008D1BFE6EAD00A460DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22016AFA1C16515F0053EFD6 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				D67962111C1579F80064EADF /* ScaleTransition.swift */,
+				D638B4CE1C15411C0062BCE1 /* FadeTransition.swift */,
+				22016AFB1C1652C40053EFD6 /* ExpandTransition.swift */,
+				D638B4CF1C15411C0062BCE1 /* BaseTransition.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
 		224200811BFE6EAD00A460DE = {
 			isa = PBXGroup;
 			children = (
@@ -157,8 +170,8 @@
 				D6A7A7011C15177300A23EA1 /* splashvideo3.mp4 */,
 				22CF53361C0387AC00084207 /* PhotoViewCell.swift */,
 				22B382F01BFFF4B600AD7A4D /* PlanCell.swift */,
-				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
 				2242008F1BFE6EAD00A460DE /* ViewController.swift */,
+				2242008D1BFE6EAD00A460DE /* AppDelegate.swift */,
 				224200911BFE6EAD00A460DE /* Main.storyboard */,
 				22016ABA1C1632CD0053EFD6 /* ReaderTableViewController.swift */,
 				22016AB01C1549050053EFD6 /* ComposerTableViewController.swift */,
@@ -182,9 +195,7 @@
 				9966E7A01C092C5100332513 /* CircularCollectionViewLayout.swift */,
 				9966E7A61C09359F00332513 /* CircularCollectionViewCell.swift */,
 				9966E7A71C09359F00332513 /* CircularCollectionViewCell.xib */,
-				D67962111C1579F80064EADF /* ScaleTransition.swift */,
-				D638B4CE1C15411C0062BCE1 /* FadeTransition.swift */,
-				D638B4CF1C15411C0062BCE1 /* BaseTransition.swift */,
+				22016AFA1C16515F0053EFD6 /* Transitions */,
 			);
 			path = Quest;
 			sourceTree = "<group>";
@@ -435,6 +446,7 @@
 				2242008E1BFE6EAD00A460DE /* AppDelegate.swift in Sources */,
 				9966E7A81C09359F00332513 /* CircularCollectionViewCell.swift in Sources */,
 				22016ABB1C1632CD0053EFD6 /* ReaderTableViewController.swift in Sources */,
+				22016AFC1C1652C40053EFD6 /* ExpandTransition.swift in Sources */,
 				22CF53371C0387AC00084207 /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

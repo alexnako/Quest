@@ -13,11 +13,12 @@ class ScaleTransition: BaseTransition {
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
         toViewController.view.alpha = 0
-        toViewController.view.transform = CGAffineTransformMakeScale(0, 0)
+        print("yes")
+        fromViewController.view.transform = CGAffineTransformMakeScale(0, 0)
         UIView.animateWithDuration(duration, animations: {
-            toViewController.view.alpha = 1
-            toViewController.view.transform = CGAffineTransformMakeScale(1, 1)
+            fromViewController.view.transform = CGAffineTransformMakeScale(1, 1)
         }) { (finished: Bool) -> Void in
+            toViewController.view.alpha = 1
             self.finish()
         }
     }
